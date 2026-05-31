@@ -1,0 +1,53 @@
+// ============================================
+// 排版
+// ============================================
+body {
+  font-family: var(--font-sans);
+}
+
+h1 { font-size: 2rem; }
+h2 { font-size: 1.5rem; }
+h3 { font-size: 1.25rem; }
+h4 { font-size: 1.125rem; }
+
+p {
+  margin-bottom: var(--space-md);
+}
+
+.content {
+  h2, h3, h4 {
+    margin-top: var(--space-xl);
+    margin-bottom: var(--space-md);
+  }
+
+  h2 { border-bottom: 2px solid var(--color-border); padding-bottom: var(--space-sm); }
+
+  ul, ol {
+    margin-bottom: var(--space-md);
+    padding-left: var(--space-xl);
+  }
+
+  ul { list-style: disc; }
+  ol { list-style: decimal; }
+
+  li { margin-bottom: var(--space-xs); }
+
+  strong { font-weight: 600; }
+
+  blockquote {
+    border-left: 4px solid var(--color-primary);
+    padding: var(--space-md) var(--space-lg);
+    margin: var(--space-lg) 0;
+    background: var(--color-primary-bg);
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  }
+}
+
+.lead {
+  font-size: 1.125rem;
+  color: var(--color-text-light);
+  line-height: 1.8;
+}
+
+.text-center { text-align: center; }
+.text-muted { color: var(--color-text-light); }

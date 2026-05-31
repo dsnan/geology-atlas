@@ -1,0 +1,19 @@
+<div class="image-gallery">
+  <div class="image-gallery__main">
+    <img src="{{ include.images[0].url | relative_url }}"
+         alt="{{ include.images[0].caption | escape }}"
+         id="gallery-main" />
+  </div>
+  {% if include.images.size > 1 %}
+    <div class="image-gallery__thumbnails">
+      {% for img in include.images %}
+        <button class="image-gallery__thumb {% if forloop.first %}active{% endif %}"
+                onclick="switchGalleryImage('{{ img.url | relative_url }}', '{{ img.caption | escape }}', this)"
+                aria-label="切换到图{{ forloop.index }}">
+          <img src="{{ img.url | relative_url }}" alt="{{ img.caption | escape }}" loading="lazy" />
+        </button>
+      {% endfor %}
+    </div>
+  {% endif %}
+  <p class="image-gallery__caption" id="gallery-caption">{{ include.images[0].caption }}</p>
+</div>

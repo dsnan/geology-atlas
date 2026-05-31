@@ -1,0 +1,86 @@
+// ============================================
+// 响应式断点
+// ============================================
+
+// Tablet (≤1024px) — 3 columns
+@media (max-width: 1024px) {
+  .card-grid { grid-template-columns: repeat(3, 1fr); }
+  .featured-grid { grid-template-columns: repeat(3, 1fr); }
+  .grid--4 { grid-template-columns: repeat(3, 1fr); }
+  .grid--5 { grid-template-columns: repeat(3, 1fr); }
+  .search-page__results .card-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+// Small tablet (≤768px) — 2 columns
+@media (max-width: 768px) {
+  .card-grid { grid-template-columns: repeat(2, 1fr); }
+  .featured-grid { grid-template-columns: repeat(2, 1fr); }
+  .grid--3, .grid--4, .grid--5 { grid-template-columns: repeat(2, 1fr); }
+
+  .hero__title { font-size: 1.75rem; }
+  .hero__icon { font-size: 3rem; }
+
+  .nav__links { gap: var(--space-md); }
+
+  .property-table {
+    th, td { padding: 10px 14px; }
+  }
+
+  .item-title { font-size: 1.5rem; }
+
+  .search-page__results .card-grid { grid-template-columns: repeat(2, 1fr); }
+
+  .filter-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filter-bar__tabs {
+    justify-content: center;
+  }
+
+  .filter-bar__search input {
+    width: 100%;
+  }
+}
+
+// Mobile (≤640px) — 1 column
+@media (max-width: 640px) {
+  .card-grid { grid-template-columns: 1fr; }
+  .featured-grid { grid-template-columns: 1fr; }
+  .grid--2, .grid--3, .grid--4, .grid--5 { grid-template-columns: 1fr; }
+
+  .hero {
+    padding: var(--space-xl) 0;
+  }
+
+  .hero__title { font-size: 1.5rem; }
+  .hero__subtitle { font-size: 1rem; }
+  .hero__search input { font-size: 0.9rem; }
+
+  .nav__links {
+    gap: var(--space-sm);
+    font-size: 0.8rem;
+  }
+
+  .nav__brand { font-size: 1rem; }
+
+  .section { padding: var(--space-xl) 0; }
+
+  .property-table {
+    th { width: 40%; }
+  }
+
+  .image-gallery__thumbnails button {
+    width: 56px;
+    height: 42px;
+  }
+
+  .item-title { font-size: 1.35rem; }
+
+  .search-page__results .card-grid { grid-template-columns: 1fr; }
+
+  .filter-tab { font-size: 0.8rem; padding: 6px 14px; }
+
+  .breadcrumb { font-size: 0.8rem; }
+}

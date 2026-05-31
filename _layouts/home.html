@@ -1,0 +1,62 @@
+---
+layout: default
+---
+{% comment %}合并所有条目并按日期降序排序{% endcomment %}
+{% assign all_items = '' | split: '' %}
+{% for cat in site.data.categories %}
+  {% assign cat_items = site[cat.slug] %}
+  {% for item in cat_items %}
+    {% if item.published != false %}
+      {% assign all_items = all_items | push: item %}
+    {% endif %}
+  {% endfor %}
+{% endfor %}
+{% assign sorted_items = all_items | sort: 'date' | reverse %}
+
+<section class="hero">
+  <div class="hero__inner">
+    <div class="hero__icon">🌍</div>
+    <h1 class="hero__title">{{ site.title }}</h1>
+    <p class="hero__subtitle">{{ site.description }}</p>
+    <div class="hero__search">
+      <input type="search" id="hero-search" placeholder="🔍  搜索矿物、岩石、化石..." onkeydown="if(event.key==='Enter'){window.location.href='{{ '/pages/search/' | relative_url }}?q='+encodeURIComponent(this.value)}" />
+    </div>
+  </div>
+</section>
+
+{% comment %} 分类快速入口 {% endcomment %}
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">探索分类</h2>
+    <div class="featured-grid">
+      {% for cat in site.data.categories %}
+        {% assign count = site[cat.slug] | where_exp: "item", "item.published != false" | size %}
+        <a href="{{ '/category/' | append: cat.slug | relative_url }}/" class="featured-card" style="border-top-color: {{ cat.color }}">
+          <div class="featured-card__icon">{{ cat.icon }}</div>
+          <div class="featured-card__title">{{ cat.name }}</div>
+          <div class="featured-card__desc">{{ cat.description }}</div>
+          <div class="featured-card__count">{{ count }} 个条目</div>
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% comment %} 最新添加 {% endcomment %}
+{% if sorted_items.size > 0 %}
+<section class="section section--tight">
+  <div class="container">
+    <h2 class="section-title">最新添加</h2>
+    <div class="card-grid">
+      {% for item in sorted_items limit:8 %}
+        {% include card.html item=item %}
+      {% endfor %}
+    </div>
+    {% if sorted_items.size > 8 %}
+      <div class="text-center" style="margin-top: var(--space-xl);">
+        <a href="{{ '/gallery/' | relative_url }}" class="filter-tab active" style="display: inline-block; text-decoration: none;">查看全部 →</a>
+      </div>
+    {% endif %}
+  </div>
+</section>
+{% endif %}

@@ -1,0 +1,28 @@
+---
+layout: none
+---
+[
+{% assign all_items = '' | split: '' %}
+{% for cat in site.data.categories %}
+  {% assign cat_items = site[cat.slug] %}
+  {% for item in cat_items %}
+    {% if item.published != false %}
+      {% assign all_items = all_items | push: item %}
+    {% endif %}
+  {% endfor %}
+{% endfor %}
+{% for item in all_items %}
+  {
+    "title": "{{ item.title | escape }}",
+    "title_en": "{{ item.title_en | default: '' | escape }}",
+    "summary": "{{ item.summary | default: '' | escape }}",
+    "url": "{{ item.url | relative_url }}",
+    "category": "{{ item.category }}",
+    "category_name": "{{ item.category_name }}",
+    "category_color": "{{ item.category_color }}",
+    "thumbnail": "{{ item.thumbnail | default: '/assets/images/placeholder.svg' | relative_url }}",
+    "tags": [{% for tag in item.tags %}"{{ tag | escape }}"{% unless forloop.last %},{% endunless %}{% endfor %}],
+    "content": "{{ item.content | strip_html | normalize_whitespace | escape | truncate: 500 }}"
+  }{% unless forloop.last %},{% endunless %}
+{% endfor %}
+]

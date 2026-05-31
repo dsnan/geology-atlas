@@ -1,0 +1,35 @@
+// ============================================
+// 搜索页
+// ============================================
+.search-page {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.search-page__input {
+  width: 100%;
+  padding: 16px 24px;
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  font-size: 1.125rem;
+  margin-bottom: var(--space-xl);
+  transition: border-color 0.2s;
+
+  &:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 4px var(--color-primary-bg);
+  }
+}
+
+.search-page__results {
+  .card-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+// Search highlight
+.search-highlight {
+  background: #fef3c7;
+  padding: 1px 2px;
+  border-radius: 2px;
+}

@@ -1,0 +1,40 @@
+# 分类元数据 - 全站单一数据源
+- slug: minerals
+  name: "矿物"
+  name_en: "Minerals"
+  color: "#4A90D9"
+  icon: "💎"
+  description: "天然形成的无机固体，具有确定的化学组成和晶体结构"
+  order: 1
+
+- slug: rocks
+  name: "岩石"
+  name_en: "Rocks"
+  color: "#8B6914"
+  icon: "🪨"
+  description: "由一种或多种矿物组成的固体集合体"
+  order: 2
+
+- slug: fossils
+  name: "化石"
+  name_en: "Fossils"
+  color: "#2E8B57"
+  icon: "🦴"
+  description: "保存在岩石中的古生物遗体或遗迹"
+  order: 3
+
+- slug: structures
+  name: "地质构造"
+  name_en: "Geological Structures"
+  color: "#C0392B"
+  icon: "🏔️"
+  description: "地壳岩石在构造运动作用下形成的形态与变形"
+  order: 4
+
+- slug: landforms
+  name: "地貌"
+  name_en: "Landforms"
+  color: "#D4A017"
+  icon: "🌋"
+  description: "地球表面的各种形态，由内力和外力共同塑造"
+  order: 5

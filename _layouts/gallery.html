@@ -1,0 +1,29 @@
+---
+layout: default
+---
+{% comment %}收集所有条目，可选按分类筛选{% endcomment %}
+{% assign all_items = '' | split: '' %}
+{% for cat in site.data.categories %}
+  {% assign cat_items = site[cat.slug] %}
+  {% for item in cat_items %}
+    {% if item.published != false %}
+      {% assign all_items = all_items | push: item %}
+    {% endif %}
+  {% endfor %}
+{% endfor %}
+
+<section class="section">
+  <div class="container">
+    <h1 class="section-title">地质图库</h1>
+    {% include filter-bar.html active=page.category_filter %}
+    <div class="card-grid" id="card-grid">
+      {% for item in all_items %}
+        {% include card.html item=item %}
+      {% endfor %}
+    </div>
+    <div class="empty-state" id="no-results" style="display:none;">
+      <div class="empty-state__icon">🔍</div>
+      <p class="empty-state__text">没有找到匹配的条目</p>
+    </div>
+  </div>
+</section>

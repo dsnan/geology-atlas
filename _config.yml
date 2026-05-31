@@ -1,0 +1,112 @@
+# ============================================
+# 地质视觉图鉴 - Jekyll 配置
+# ============================================
+title: "地质视觉图鉴"
+title_en: "Geology Visual Atlas"
+description: "探索矿物、岩石、化石、地质构造与地貌的视觉图鉴"
+lang: zh-CN
+url: ""
+baseurl: "/geology-atlas"
+repo: "geology-atlas"
+timezone: Asia/Shanghai
+encoding: utf-8
+
+# ============================================
+# Build Settings
+# ============================================
+markdown: kramdown
+highlighter: rouge
+permalink: /:categories/:title/
+
+# ============================================
+# Collections (5 categories)
+# ============================================
+collections:
+  minerals:
+    output: true
+    permalink: /minerals/:title/
+    sort_by: title
+  rocks:
+    output: true
+    permalink: /rocks/:title/
+    sort_by: title
+  fossils:
+    output: true
+    permalink: /fossils/:title/
+    sort_by: title
+  structures:
+    output: true
+    permalink: /structures/:title/
+    sort_by: title
+  landforms:
+    output: true
+    permalink: /landforms/:title/
+    sort_by: title
+
+# ============================================
+# Default Front Matter
+# ============================================
+defaults:
+  - scope:
+      path: ""
+      type: "minerals"
+    values:
+      layout: "item"
+      category: "minerals"
+      category_name: "矿物"
+      category_color: "#4A90D9"
+  - scope:
+      path: ""
+      type: "rocks"
+    values:
+      layout: "item"
+      category: "rocks"
+      category_name: "岩石"
+      category_color: "#8B6914"
+  - scope:
+      path: ""
+      type: "fossils"
+    values:
+      layout: "item"
+      category: "fossils"
+      category_name: "化石"
+      category_color: "#2E8B57"
+  - scope:
+      path: ""
+      type: "structures"
+    values:
+      layout: "item"
+      category: "structures"
+      category_name: "地质构造"
+      category_color: "#C0392B"
+  - scope:
+      path: ""
+      type: "landforms"
+    values:
+      layout: "item"
+      category: "landforms"
+      category_name: "地貌"
+      category_color: "#D4A017"
+  - scope:
+      path: "_pages"
+    values:
+      layout: "default"
+
+# ============================================
+# Plugins (GitHub Pages safe)
+# ============================================
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Exclude
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - LICENSE
+  - vendor/
+  - .sass-cache/
+  - node_modules/
+  - .gitignore

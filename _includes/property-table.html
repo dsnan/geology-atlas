@@ -1,0 +1,12 @@
+{% if include.properties %}
+<table class="property-table">
+  <tbody>
+    {% for prop in include.properties %}
+      <tr>
+        <th>{{ prop.label }}</th>
+        <td>{{ prop.value }}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endif %}

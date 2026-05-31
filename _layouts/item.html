@@ -1,0 +1,75 @@
+---
+layout: default
+---
+<article class="section">
+  <div class="container">
+    <div class="item-detail">
+      {% comment %}面包屑{% endcomment %}
+      <div class="breadcrumb">
+        <a href="{{ '/' | relative_url }}">首页</a>
+        <span class="breadcrumb__sep">›</span>
+        <a href="{{ '/category/' | append: page.category | relative_url }}/">{{ page.category_name }}</a>
+        <span class="breadcrumb__sep">›</span>
+        <span>{{ page.title }}</span>
+      </div>
+
+      {% comment %}图片画廊{% endcomment %}
+      {% if page.images %}
+        {% include image-gallery.html images=page.images %}
+      {% endif %}
+
+      {% comment %}标题区{% endcomment %}
+      <div class="item-header">
+        <span class="category-badge" style="background-color: {{ page.category_color }}">{{ page.category_name }}</span>
+        <h1 class="item-title">{{ page.title }}</h1>
+        {% if page.title_en %}
+          <p class="item-title-en">{{ page.title_en }}</p>
+        {% endif %}
+      </div>
+
+      {% comment %}简介{% endcomment %}
+      {% if page.summary %}
+        <p class="lead">{{ page.summary }}</p>
+      {% endif %}
+
+      {% comment %}属性表{% endcomment %}
+      {% if page.properties %}
+        {% include property-table.html properties=page.properties %}
+      {% endif %}
+
+      {% comment %}正文内容{% endcomment %}
+      <div class="content">
+        {{ content }}
+      </div>
+
+      {% comment %}标签{% endcomment %}
+      {% if page.tags %}
+        <div style="margin-top: var(--space-xl); display: flex; flex-wrap: wrap; gap: var(--space-sm);">
+          {% for tag in page.tags %}
+            <span style="background: var(--color-border-light); padding: 4px 12px; border-radius: var(--radius-lg); font-size: 0.8rem; color: var(--color-text-light);">#{{ tag }}</span>
+          {% endfor %}
+        </div>
+      {% endif %}
+
+      {% comment %}关联条目{% endcomment %}
+      {% if page.related %}
+        <div class="related-items">
+          <h3 class="related-items__title">相关条目</h3>
+          <div class="card-grid">
+            {% for related_url in page.related %}
+              {% assign found = false %}
+              {% for cat in site.data.categories %}
+                {% for item in site[cat.slug] %}
+                  {% if item.url == related_url and found == false %}
+                    {% include card.html item=item %}
+                    {% assign found = true %}
+                  {% endif %}
+                {% endfor %}
+              {% endfor %}
+            {% endfor %}
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</article>

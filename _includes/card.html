@@ -1,0 +1,20 @@
+{% comment %}
+  卡片组件 — 全站复用
+  需要变量: item (title, url, thumbnail, summary, category, category_name, category_color)
+{% endcomment %}
+<article class="card" data-category="{{ include.item.category }}">
+  <a href="{{ include.item.url | relative_url }}" class="card__link">
+    <div class="card__image">
+      <img src="{{ include.item.thumbnail | default: '/assets/images/placeholder.svg' | relative_url }}"
+           alt="{{ include.item.title }}"
+           loading="lazy" />
+      <span class="card__badge" style="background-color: {{ include.item.category_color }}">
+        {{ include.item.category_name }}
+      </span>
+    </div>
+    <div class="card__body">
+      <h3 class="card__title">{{ include.item.title }}</h3>
+      <p class="card__summary">{{ include.item.summary | default: "" | truncate: 80 }}</p>
+    </div>
+  </a>
+</article>
