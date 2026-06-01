@@ -1,3 +1,14 @@
 <footer class="footer">
-  <p>{{ site.title }} &mdash; 探索地球的奥秘 | 基于 Jekyll + GitHub Pages 构建</p>
+  <div class="container">
+    <p>{{ site.title }} — 探索地球的奥秘</p>
+    <div class="footer__links">
+      <a href="{{ '/' | relative_url }}">首页</a>
+      <a href="{{ '/gallery/' | relative_url }}">图库</a>
+      <a href="{{ '/pages/search/' | relative_url }}">搜索</a>
+      {% for cat in site.data.categories limit:3 %}
+        <a href="{{ '/category/' | append: cat.slug | relative_url }}/">{{ cat.name }}</a>
+      {% endfor %}
+    </div>
+    <p style="margin-top: var(--space-md); font-size: 0.8rem; opacity: 0.6;">基于 Jekyll + GitHub Pages 构建 · 知识共享</p>
+  </div>
 </footer>

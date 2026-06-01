@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <rect width="400" height="300" fill="#1a1a2e"/>
+  <g transform="translate(200,140)" opacity="0.7">
+    <line x1="-70" y1="-20" x2="70" y2="-20" stroke="#2E8B57" stroke-width="1.5" stroke-dasharray="8,4"/>
+    <line x1="-70" y1="0" x2="70" y2="0" stroke="#2E8B57" stroke-width="2"/>
+    <line x1="-70" y1="20" x2="70" y2="20" stroke="#2E8B57" stroke-width="1.5" stroke-dasharray="6,4"/>
+    <circle cx="-40" cy="-30" r="3" fill="#3da06d"/>
+    <circle cx="-20" cy="-15" r="3" fill="#3da06d"/>
+    <circle cx="0" cy="-10" r="3" fill="#3da06d"/>
+    <circle cx="20" cy="-15" r="3" fill="#3da06d"/>
+    <circle cx="40" cy="-30" r="3" fill="#3da06d"/>
+    <circle cx="-30" cy="35" r="3" fill="#3da06d"/>
+    <circle cx="-10" cy="25" r="3" fill="#3da06d"/>
+    <circle cx="10" cy="20" r="3" fill="#3da06d"/>
+    <circle cx="30" cy="25" r="3" fill="#3da06d"/>
+  </g>
+  <text x="200" y="275" text-anchor="middle" fill="white" font-size="13" font-family="sans-serif" opacity="0.7">笔石 | Graptolite</text>
+</svg>

@@ -12,8 +12,24 @@
   name_en: "Rocks"
   color: "#8B6914"
   icon: "🪨"
-  description: "由一种或多种矿物组成的固体集合体"
+  description: "由一种或多种矿物组成的固体集合体，分为火成岩、沉积岩、变质岩三大类"
   order: 2
+  subcategories:
+    - slug: igneous
+      name: "火成岩"
+      color: "#C0392B"
+      icon: "🌋"
+      desc: "岩浆冷却结晶形成"
+    - slug: sedimentary
+      name: "沉积岩"
+      color: "#D4A017"
+      icon: "🏖️"
+      desc: "风化产物沉积固结形成"
+    - slug: metamorphic
+      name: "变质岩"
+      color: "#7B2D8E"
+      icon: "🔄"
+      desc: "高温高压变质重结晶形成"
 
 - slug: fossils
   name: "化石"
@@ -26,7 +42,7 @@
 - slug: structures
   name: "地质构造"
   name_en: "Geological Structures"
-  color: "#C0392B"
+  color: "#8B4513"
   icon: "🏔️"
   description: "地壳岩石在构造运动作用下形成的形态与变形"
   order: 4
@@ -34,7 +50,7 @@
 - slug: landforms
   name: "地貌"
   name_en: "Landforms"
-  color: "#D4A017"
-  icon: "🌋"
+  color: "#1A7A5A"
+  icon: "⛰️"
   description: "地球表面的各种形态，由内力和外力共同塑造"
   order: 5

@@ -25,7 +25,7 @@ summary: "石英是地壳中最常见的矿物之一，占地壳总体积的约1
 tags: ["硅酸盐矿物", "常见矿物", "宝石"]
 difficulty: 1
 related:
-  - "/rocks/granite"
+  - "/igneous/granite"
   - "/minerals/feldspar"
 ---
 

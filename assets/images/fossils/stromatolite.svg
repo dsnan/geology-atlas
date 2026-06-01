@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <rect width="400" height="300" fill="#2a3a2a"/>
+  <g transform="translate(200,160)" opacity="0.7">
+    <ellipse cx="0" cy="0" rx="90" ry="15" fill="none" stroke="#2E8B57" stroke-width="1.5"/>
+    <ellipse cx="0" cy="-15" rx="75" ry="12" fill="none" stroke="#3a9d6a" stroke-width="1.5"/>
+    <ellipse cx="0" cy="-30" rx="60" ry="10" fill="none" stroke="#2E8B57" stroke-width="1.5"/>
+    <ellipse cx="0" cy="-45" rx="45" ry="8" fill="none" stroke="#3a9d6a" stroke-width="1.2"/>
+    <ellipse cx="0" cy="-60" rx="30" ry="6" fill="none" stroke="#2E8B57" stroke-width="1.2"/>
+    <ellipse cx="0" cy="-75" rx="18" ry="4" fill="none" stroke="#3a9d6a" stroke-width="1"/>
+  </g>
+  <text x="200" y="280" text-anchor="middle" fill="#ddd" font-size="13" font-family="sans-serif" opacity="0.7">叠层石 | Stromatolite</text>
+</svg>

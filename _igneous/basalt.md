@@ -2,9 +2,9 @@
 title: "玄武岩"
 title_en: "Basalt"
 date: 2026-05-04
-thumbnail: "/assets/images/rocks/basalt.jpg"
+thumbnail: "/assets/images/igneous/basalt.jpg"
 images:
-  - url: "/assets/images/rocks/basalt.jpg"
+  - url: "/assets/images/igneous/basalt.jpg"
     caption: "玄武岩标本"
 properties:
   - label: "成因类型"
@@ -21,7 +21,7 @@ summary: "玄武岩是最常见的火山喷出岩，覆盖了地球表面的大�
 tags: ["火成岩", "喷出岩", "基性岩", "火山岩"]
 difficulty: 1
 related:
-  - "/rocks/granite"
+  - "/igneous/granite"
 ---
 
 ## 概述

@@ -21,7 +21,7 @@ summary: "喀斯特溶洞是地下水溶蚀石灰岩形成的地下空洞系统�
 tags: ["喀斯特", "岩溶", "溶洞", "地下水", "地貌"]
 difficulty: 2
 related:
-  - "/rocks/limestone"
+  - "/sedimentary/limestone"
 ---
 
 ## 概述

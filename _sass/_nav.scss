@@ -2,12 +2,15 @@
 // 导航栏
 // ============================================
 .nav {
-  background: var(--color-surface);
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--color-border);
   position: sticky;
   top: 0;
   z-index: 100;
   height: var(--nav-height);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
 }
 
 .nav__inner {
@@ -26,6 +29,7 @@
   display: flex;
   align-items: center;
   gap: var(--space-sm);
+  transition: opacity 0.2s;
 
   &:hover { opacity: 0.8; }
 }
@@ -37,28 +41,41 @@
 .nav__links {
   display: flex;
   align-items: center;
-  gap: var(--space-lg);
+  gap: 2px;
 
   a {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     color: var(--color-text-light);
-    transition: color 0.2s;
+    transition: color 0.2s, background 0.2s;
+    padding: 5px 10px;
+    border-radius: var(--radius-md);
+    white-space: nowrap;
 
-    &:hover,
-    &.active { color: var(--color-text); }
+    &:hover {
+      color: var(--color-text);
+      background: var(--color-border-light);
+    }
+
+    &.active {
+      color: var(--color-primary);
+      background: var(--color-primary-bg);
+      font-weight: 600;
+    }
   }
 }
 
 .nav__search-btn {
-  padding: var(--space-xs) var(--space-md);
+  padding: 8px 18px;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   font-size: 0.85rem;
   color: var(--color-text-light);
   transition: all 0.2s;
+  margin-left: var(--space-sm);
 
   &:hover {
     border-color: var(--color-primary);
     color: var(--color-primary);
+    background: var(--color-primary-bg);
   }
 }

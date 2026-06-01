@@ -1,5 +1,35 @@
 ---
-layout: gallery
+layout: default
 title: "岩石图鉴"
-category_filter: rocks
+permalink: /category/rocks/
 ---
+{% assign total = 0 %}
+{% for sub in site.data.categories[1].subcategories %}
+  {% assign items = site[sub.slug] | where_exp: "item", "item.published != false" %}
+  {% assign total = total | plus: items.size %}
+{% endfor %}
+
+<section class="section">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="{{ '/' | relative_url }}">首页</a>
+      <span class="breadcrumb__sep">›</span>
+      <span>岩石</span>
+    </div>
+    <h1 class="section-title">🪨 岩石图鉴（{{ total }} 个条目）</h1>
+    {% assign rock_subs = site.data.categories[1].subcategories %}
+    {% include filter-bar.html active='rocks' subcategories=rock_subs %}
+    <div class="card-grid" id="card-grid">
+      {% for sub in site.data.categories[1].subcategories %}
+        {% assign items = site[sub.slug] | where_exp: "item", "item.published != false" %}
+        {% for item in items %}
+          {% include card.html item=item %}
+        {% endfor %}
+      {% endfor %}
+    </div>
+    <div class="empty-state" id="no-results" style="display:none;">
+      <div class="empty-state__icon">🔍</div>
+      <p class="empty-state__text">没有找到匹配的条目</p>
+    </div>
+  </div>
+</section>

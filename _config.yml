@@ -10,6 +10,7 @@ baseurl: "/geology-atlas"
 repo: "geology-atlas"
 timezone: Asia/Shanghai
 encoding: utf-8
+future: true
 
 # ============================================
 # Build Settings
@@ -19,16 +20,24 @@ highlighter: rouge
 permalink: /:categories/:title/
 
 # ============================================
-# Collections (5 categories)
+# Collections (7 categories)
 # ============================================
 collections:
   minerals:
     output: true
     permalink: /minerals/:title/
     sort_by: title
-  rocks:
+  igneous:
     output: true
-    permalink: /rocks/:title/
+    permalink: /igneous/:title/
+    sort_by: title
+  sedimentary:
+    output: true
+    permalink: /sedimentary/:title/
+    sort_by: title
+  metamorphic:
+    output: true
+    permalink: /metamorphic/:title/
     sort_by: title
   fossils:
     output: true
@@ -57,12 +66,31 @@ defaults:
       category_color: "#4A90D9"
   - scope:
       path: ""
-      type: "rocks"
+      type: "igneous"
     values:
       layout: "item"
-      category: "rocks"
-      category_name: "岩石"
-      category_color: "#8B6914"
+      category: "igneous"
+      category_name: "火成岩"
+      category_color: "#C0392B"
+      parent: "rocks"
+  - scope:
+      path: ""
+      type: "sedimentary"
+    values:
+      layout: "item"
+      category: "sedimentary"
+      category_name: "沉积岩"
+      category_color: "#D4A017"
+      parent: "rocks"
+  - scope:
+      path: ""
+      type: "metamorphic"
+    values:
+      layout: "item"
+      category: "metamorphic"
+      category_name: "变质岩"
+      category_color: "#7B2D8E"
+      parent: "rocks"
   - scope:
       path: ""
       type: "fossils"

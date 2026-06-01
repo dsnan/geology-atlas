@@ -1,21 +1,61 @@
 ---
 layout: default
 ---
-{% comment %}收集所有条目，可选按分类筛选{% endcomment %}
+{% comment %}收集所有条目（支持子分类）{% endcomment %}
 {% assign all_items = '' | split: '' %}
 {% for cat in site.data.categories %}
-  {% assign cat_items = site[cat.slug] %}
-  {% for item in cat_items %}
-    {% if item.published != false %}
-      {% assign all_items = all_items | push: item %}
+  {% if cat.subcategories %}
+    {% for sub in cat.subcategories %}
+      {% assign cat_items = site[sub.slug] %}
+      {% for item in cat_items %}
+        {% if item.published != false %}
+          {% assign all_items = all_items | push: item %}
+        {% endif %}
+      {% endfor %}
+    {% endfor %}
+  {% else %}
+    {% assign cat_items = site[cat.slug] %}
+    {% for item in cat_items %}
+      {% if item.published != false %}
+        {% assign all_items = all_items | push: item %}
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+{% endfor %}
+
+{% comment %}确定筛选器配置：检查当前页面的分类是否为岩石子分类{% endcomment %}
+{% assign filter_cats = site.data.categories %}
+{% assign is_rock_sub = false %}
+{% if page.category_filter %}
+  {% for cat in site.data.categories %}
+    {% if cat.subcategories %}
+      {% for sub in cat.subcategories %}
+        {% if sub.slug == page.category_filter %}
+          {% assign filter_cats = cat.subcategories %}
+          {% assign is_rock_sub = true %}
+        {% endif %}
+      {% endfor %}
     {% endif %}
   {% endfor %}
-{% endfor %}
+{% endif %}
 
 <section class="section">
   <div class="container">
-    <h1 class="section-title">地质图库</h1>
-    {% include filter-bar.html active=page.category_filter %}
+    <div class="breadcrumb">
+      <a href="{{ '/' | relative_url }}">首页</a>
+      {% if is_rock_sub %}
+        <span class="breadcrumb__sep">›</span>
+        <a href="{{ '/category/rocks/' | relative_url }}">岩石</a>
+      {% endif %}
+      <span class="breadcrumb__sep">›</span>
+      <span>{{ page.title | remove: "图鉴" }}</span>
+    </div>
+    <h1 class="section-title">{{ page.title }}</h1>
+    {% if is_rock_sub %}
+      {% include filter-bar.html active=page.category_filter subcategories=filter_cats %}
+    {% else %}
+      {% include filter-bar.html active=page.category_filter %}
+    {% endif %}
     <div class="card-grid" id="card-grid">
       {% for item in all_items %}
         {% include card.html item=item %}

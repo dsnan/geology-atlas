@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <rect width="400" height="300" fill="#2d2d2d"/>
+  <g opacity="0.7">
+    <line x1="120" y1="20" x2="118" y2="280" stroke="#C0392B" stroke-width="1.5"/>
+    <line x1="200" y1="20" x2="198" y2="280" stroke="#C0392B" stroke-width="1.2"/>
+    <line x1="280" y1="20" x2="278" y2="280" stroke="#C0392B" stroke-width="1.8"/>
+    <line x1="80" y1="100" x2="320" y2="98" stroke="#d44a3a" stroke-width="1" opacity="0.5"/>
+    <line x1="80" y1="160" x2="320" y2="158" stroke="#d44a3a" stroke-width="1.2" opacity="0.5"/>
+    <line x1="80" y1="220" x2="320" y2="218" stroke="#d44a3a" stroke-width="0.8" opacity="0.4"/>
+  </g>
+  <text x="200" y="280" text-anchor="middle" fill="#ccc" font-size="14" font-family="sans-serif" opacity="0.8">节理 | Joint</text>
+</svg>

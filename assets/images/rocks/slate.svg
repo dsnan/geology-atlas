@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <rect width="400" height="300" fill="#3a3d3a"/>
+  <g opacity="0.6">
+    <line x1="0" y1="40" x2="400" y2="38" stroke="#5a5d5a" stroke-width="2"/>
+    <line x1="0" y1="80" x2="400" y2="78" stroke="#5a5d5a" stroke-width="1.2"/>
+    <line x1="0" y1="120" x2="400" y2="118" stroke="#6a6d6a" stroke-width="1.5"/>
+    <line x1="0" y1="160" x2="400" y2="158" stroke="#5a5d5a" stroke-width="2"/>
+    <line x1="0" y1="200" x2="400" y2="198" stroke="#5a5d5a" stroke-width="1.2"/>
+    <line x1="0" y1="240" x2="400" y2="238" stroke="#6a6d6a" stroke-width="1.5"/>
+  </g>
+  <text x="200" y="278" text-anchor="middle" fill="#aaa" font-size="14" font-family="sans-serif" opacity="0.7">板岩 | Slate</text>
+</svg>

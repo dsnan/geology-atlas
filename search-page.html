@@ -1,0 +1,43 @@
+---
+layout: default
+title: "搜索"
+permalink: /pages/search/
+---
+<div class="section">
+  <div class="container">
+    <div class="search-page">
+      <h1 class="section-title">搜索地质条目</h1>
+
+      <div class="search-modes">
+        <label class="search-mode-option is-active" id="mode-fuzzy-label" title="">
+          <input type="radio" name="search-mode" value="fuzzy" checked />
+          <span class="search-mode__icon">🔍</span>
+          <span class="search-mode__name">模糊搜索</span>
+          <span class="search-mode__tooltip" data-tooltip="匹配标题、英文名、摘要、正文内容和标签。搜索结果更全面，适合不确定关键词时使用。"></span>
+        </label>
+        <label class="search-mode-option" id="mode-exact-label" title="">
+          <input type="radio" name="search-mode" value="exact" />
+          <span class="search-mode__icon">🎯</span>
+          <span class="search-mode__name">精准搜索</span>
+          <span class="search-mode__tooltip" data-tooltip="仅匹配条目标题。快速定位你知道名称的矿物、岩石、化石等。"></span>
+        </label>
+      </div>
+
+      <input type="search" class="search-page__input" id="search-page-input"
+             placeholder="输入关键词搜索…" autofocus
+             data-search-url="{{ '/search.json' | relative_url }}" />
+
+      <div class="search-page__results">
+        <div class="card-grid" id="search-results"></div>
+      </div>
+      <div class="empty-state" id="search-empty">
+        <div class="empty-state__icon">🔍</div>
+        <p class="empty-state__text">输入关键词开始搜索</p>
+      </div>
+      <div class="empty-state" id="search-no-results" style="display:none;">
+        <div class="empty-state__icon">😕</div>
+        <p class="empty-state__text">没有找到匹配的结果，试试其他关键词或切换到模糊搜索</p>
+      </div>
+    </div>
+  </div>
+</div>

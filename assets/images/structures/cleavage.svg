@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <rect width="400" height="300" fill="#2a2a2a"/>
+  <g opacity="0.6">
+    <line x1="20" y1="50" x2="360" y2="40" stroke="#C0392B" stroke-width="1"/>
+    <line x1="20" y1="70" x2="360" y2="60" stroke="#C0392B" stroke-width="1.2"/>
+    <line x1="20" y1="90" x2="360" y2="80" stroke="#C0392B" stroke-width="0.8"/>
+    <line x1="20" y1="110" x2="360" y2="100" stroke="#C0392B" stroke-width="1"/>
+    <line x1="20" y1="130" x2="360" y2="120" stroke="#C0392B" stroke-width="1.2"/>
+    <line x1="20" y1="150" x2="360" y2="140" stroke="#C0392B" stroke-width="0.8"/>
+    <line x1="20" y1="170" x2="360" y2="160" stroke="#C0392B" stroke-width="1"/>
+    <line x1="20" y1="190" x2="360" y2="180" stroke="#C0392B" stroke-width="1.2"/>
+    <line x1="20" y1="210" x2="360" y2="200" stroke="#C0392B" stroke-width="0.8"/>
+    <line x1="20" y1="230" x2="360" y2="220" stroke="#C0392B" stroke-width="1"/>
+    <line x1="20" y1="250" x2="360" y2="240" stroke="#C0392B" stroke-width="1.2"/>
+  </g>
+  <text x="200" y="280" text-anchor="middle" fill="#ccc" font-size="14" font-family="sans-serif" opacity="0.8">劈理 | Cleavage</text>
+</svg>

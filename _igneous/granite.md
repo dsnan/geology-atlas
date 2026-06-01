@@ -2,9 +2,9 @@
 title: "花岗岩"
 title_en: "Granite"
 date: 2026-05-03
-thumbnail: "/assets/images/rocks/granite.jpg"
+thumbnail: "/assets/images/igneous/granite.jpg"
 images:
-  - url: "/assets/images/rocks/granite.jpg"
+  - url: "/assets/images/igneous/granite.jpg"
     caption: "花岗岩手标本"
 properties:
   - label: "成因类型"

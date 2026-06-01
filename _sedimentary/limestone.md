@@ -2,9 +2,9 @@
 title: "石灰岩"
 title_en: "Limestone"
 date: 2026-05-05
-thumbnail: "/assets/images/rocks/limestone.jpg"
+thumbnail: "/assets/images/sedimentary/limestone.jpg"
 images:
-  - url: "/assets/images/rocks/limestone.jpg"
+  - url: "/assets/images/sedimentary/limestone.jpg"
     caption: "石灰岩标本"
 properties:
   - label: "成因类型"

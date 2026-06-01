@@ -2,6 +2,40 @@
 // 响应式断点
 // ============================================
 
+// Wide desktop (≥1400px) — larger spacing
+@media (min-width: 1400px) {
+  .container {
+    max-width: var(--max-width-wide);
+  }
+
+  .card-grid {
+    gap: var(--space-xl);
+  }
+
+  .hero {
+    padding: calc(var(--space-3xl) * 1.5) 0;
+  }
+
+  .hero__title {
+    font-size: 3rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .item-title {
+    font-size: 2.5rem;
+  }
+}
+
+// Laptop (≤1200px) — Still 4 columns
+@media (max-width: 1200px) {
+  .container {
+    padding: 0 var(--space-lg);
+  }
+}
+
 // Tablet (≤1024px) — 3 columns
 @media (max-width: 1024px) {
   .card-grid { grid-template-columns: repeat(3, 1fr); }

@@ -56,5 +56,11 @@
 
   // ---- 布局 ----
   --max-width: 1200px;
-  --nav-height: 64px;
+  --max-width-wide: 1400px;
+  --nav-height: 68px;
+  --content-width: 780px;
+
+  // ---- 动画 ----
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
 }

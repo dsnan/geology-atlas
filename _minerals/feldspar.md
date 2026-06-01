@@ -26,7 +26,7 @@ tags: ["硅酸盐矿物", "造岩矿物", "常见矿物"]
 difficulty: 1
 related:
   - "/minerals/quartz"
-  - "/rocks/granite"
+  - "/igneous/granite"
 ---
 
 ## 概述

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <rect width="400" height="300" fill="#2a2a2a"/>
+  <g transform="translate(200,145)" opacity="0.8">
+    <path d="M-70,20 L-30,-60 L40,-50 L70,10 L30,60 L-40,50 Z" fill="none" stroke="#e8e0d0" stroke-width="1.5" opacity="0.5"/>
+    <path d="M-60,25 L-25,-45 L35,-35 L60,12" fill="none" stroke="#d4c8b0" stroke-width="2" opacity="0.7"/>
+    <circle cx="-15" cy="-15" r="25" fill="#f0ead8" opacity="0.1" stroke="#e8e0d0" stroke-width="1"/>
+    <circle cx="10" cy="5" r="18" fill="#d8d0c0" opacity="0.08" stroke="#d4c8b0" stroke-width="0.8"/>
+  </g>
+  <text x="200" y="270" text-anchor="middle" fill="white" font-size="14" font-family="sans-serif" opacity="0.7">大理岩 | Marble</text>
+</svg>

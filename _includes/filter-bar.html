@@ -1,12 +1,21 @@
 <div class="filter-bar" id="filter-bar">
   <div class="filter-bar__tabs">
     <button class="filter-tab active" data-filter="all">全部</button>
-    {% for cat in site.data.categories %}
-      <button class="filter-tab" data-filter="{{ cat.slug }}"{% if include.active == cat.slug %} data-default="true"{% endif %}>
-        <span class="filter-tab__icon">{{ cat.icon }}</span>
-        {{ cat.name }}
-      </button>
-    {% endfor %}
+    {% if include.subcategories %}
+      {% for sub in include.subcategories %}
+        <button class="filter-tab" data-filter="{{ sub.slug }}">
+          <span class="filter-tab__icon">{{ sub.icon }}</span>
+          {{ sub.name }}
+        </button>
+      {% endfor %}
+    {% else %}
+      {% for cat in site.data.categories %}
+        <button class="filter-tab" data-filter="{{ cat.slug }}"{% if include.active == cat.slug %} data-default="true"{% endif %}>
+          <span class="filter-tab__icon">{{ cat.icon }}</span>
+          {{ cat.name }}
+        </button>
+      {% endfor %}
+    {% endif %}
   </div>
   <div class="filter-bar__search">
     <input type="search" id="filter-search" placeholder="搜索..." aria-label="搜索" />

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <rect width="400" height="300" fill="#1a2a1a"/>
+  <g transform="translate(200,140)" opacity="0.8">
+    <rect x="-60" y="-70" width="120" height="140" rx="4" fill="#3a5a3a" opacity="0.2" stroke="#5a8a3a" stroke-width="2"/>
+    <line x1="-60" y1="-30" x2="60" y2="-35" stroke="#5a8a3a" stroke-width="1.5" opacity="0.5"/>
+    <line x1="-60" y1="0" x2="60" y2="-5" stroke="#4a7a2a" stroke-width="1.5" opacity="0.4"/>
+    <line x1="-60" y1="30" x2="60" y2="25" stroke="#5a8a3a" stroke-width="1.5" opacity="0.5"/>
+  </g>
+  <text x="200" y="270" text-anchor="middle" fill="#ddd" font-size="14" font-family="sans-serif" opacity="0.7">辉石 | Pyroxene</text>
+</svg>
