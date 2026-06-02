@@ -165,13 +165,8 @@
     } catch (e) { /* localStorage 不可用则每次显示 */ }
 
     if (!dismissed) {
-      if (document.readyState === 'complete') {
-        setTimeout(openAnnouncement, 400);
-      } else {
-        window.addEventListener('load', function () {
-          setTimeout(openAnnouncement, 400);
-        });
-      }
+      // 直接延迟弹出，脚本在 body 底部，DOM 已就绪
+      setTimeout(openAnnouncement, 500);
     }
 
     // 关闭按钮
