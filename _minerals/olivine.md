@@ -2,10 +2,12 @@
 title: "橄榄石"
 title_en: "Olivine"
 date: 2026-05-14
-thumbnail: "/assets/images/minerals/olivine.svg"
+thumbnail: "/assets/images/minerals/olivine.jpg"
 images:
-  - url: "/assets/images/minerals/olivine.svg"
+  - url: "/assets/images/minerals/olivine.jpg"
     caption: "橄榄石晶体（宝石级）"
+  - url: "/assets/images/minerals/olivine-2.jpg"
+    caption: "橄榄石野外产出"
 properties:
   - label: "化学成分"
     value: "(Mg,Fe)₂SiO₄（镁铁硅酸盐固溶体）"

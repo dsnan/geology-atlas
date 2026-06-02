@@ -2,9 +2,9 @@
 title: "黄铁矿"
 title_en: "Pyrite"
 date: 2026-05-13
-thumbnail: "/assets/images/minerals/pyrite.svg"
+thumbnail: "/assets/images/minerals/pyrite.jpg"
 images:
-  - url: "/assets/images/minerals/pyrite.svg"
+  - url: "/assets/images/minerals/pyrite.jpg"
     caption: "黄铁矿晶体标本"
 properties:
   - label: "化学成分"

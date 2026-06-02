@@ -2,9 +2,9 @@
 title: "云母"
 title_en: "Mica"
 date: 2026-05-12
-thumbnail: "/assets/images/minerals/mica.svg"
+thumbnail: "/assets/images/minerals/mica.jpg"
 images:
-  - url: "/assets/images/minerals/mica.svg"
+  - url: "/assets/images/minerals/mica.jpg"
     caption: "云母矿物标本"
 properties:
   - label: "化学成分"

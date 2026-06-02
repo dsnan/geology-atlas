@@ -6,6 +6,8 @@ thumbnail: "/assets/images/structures/fault.jpg"
 images:
   - url: "/assets/images/structures/fault.jpg"
     caption: "断层构造示意图 — 岩层断裂并发生位移"
+  - url: "/assets/images/structures/fault-2.jpg"
+    caption: "断层野外露头 — 断层面与两盘位移"
 properties:
   - label: "构造类型"
     value: "断裂构造"

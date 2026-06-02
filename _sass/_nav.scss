@@ -30,6 +30,7 @@
   align-items: center;
   gap: var(--space-sm);
   transition: opacity 0.2s;
+  flex-shrink: 0;
 
   &:hover { opacity: 0.8; }
 }
@@ -38,10 +39,14 @@
   font-size: 1.5rem;
 }
 
+// ============================================
+// 桌面端导航链接
+// ============================================
 .nav__links {
   display: flex;
   align-items: center;
   gap: 2px;
+  list-style: none;
 
   a {
     font-size: 0.8rem;
@@ -77,5 +82,198 @@
     border-color: var(--color-primary);
     color: var(--color-primary);
     background: var(--color-primary-bg);
+  }
+}
+
+// ============================================
+// 汉堡菜单按钮（移动端）
+// ============================================
+.nav__toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+  border-radius: var(--radius-md);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 110;
+  transition: background 0.2s;
+
+  &:hover {
+    background: var(--color-border-light);
+  }
+
+  .nav__toggle-bar {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: var(--color-text);
+    border-radius: 2px;
+    transition: transform 0.3s var(--ease-smooth), opacity 0.2s;
+    transform-origin: center;
+  }
+
+  // 激活态 → X
+  &.is-open {
+    .nav__toggle-bar:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+    .nav__toggle-bar:nth-child(2) {
+      opacity: 0;
+    }
+    .nav__toggle-bar:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+  }
+}
+
+// ============================================
+// 桌面端：菜单平铺内联
+// ============================================
+.nav__menu {
+  display: flex;
+  align-items: center;
+}
+
+.nav__menu-header {
+  display: none;
+}
+
+.nav__menu-close {
+  display: none;
+}
+
+.nav__overlay {
+  display: none;
+}
+
+// ============================================
+// 移动端响应式（≤768px 显示汉堡菜单）
+// ============================================
+@media (max-width: 768px) {
+  .nav__toggle {
+    display: flex;
+  }
+
+  // 移动端：菜单变为侧滑面板
+  .nav__menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 280px;
+    max-width: 82vw;
+    height: 100vh;
+    height: 100dvh;
+    background: var(--color-surface);
+    box-shadow: -4px 0 24px rgba(0,0,0,0.12);
+    z-index: 120;
+    padding: var(--space-lg) var(--space-xl);
+    transform: translateX(100%);
+    transition: transform 0.35s var(--ease-smooth);
+    overflow-y: auto;
+    flex-direction: column;
+    align-items: stretch;
+
+    &.is-open {
+      transform: translateX(0);
+    }
+
+    .nav__links {
+      flex-direction: column;
+      gap: 4px;
+      margin-top: var(--space-lg);
+
+      a {
+        display: block;
+        font-size: 0.95rem;
+        padding: 12px 14px;
+        border-radius: var(--radius-md);
+        color: var(--color-text);
+        transition: background 0.15s, color 0.15s;
+
+        &:hover {
+          background: var(--color-border-light);
+          color: var(--color-text);
+        }
+
+        &.active {
+          background: var(--color-primary-bg);
+          color: var(--color-primary);
+          font-weight: 600;
+        }
+      }
+    }
+
+    .nav__search-btn {
+      display: block;
+      margin-left: 0;
+      margin-top: var(--space-md);
+      text-align: center;
+      padding: 12px 18px;
+      font-size: 0.95rem;
+      border-radius: var(--radius-md);
+      border: 2px solid var(--color-primary);
+      color: var(--color-primary);
+      background: var(--color-primary-bg);
+    }
+
+    .nav__search-li {
+      margin-top: var(--space-sm);
+    }
+  }
+
+  .nav__menu-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: var(--space-md);
+    border-bottom: 1px solid var(--color-border-light);
+  }
+
+  .nav__menu-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text);
+  }
+
+  .nav__menu-close {
+    display: flex;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    background: var(--color-border-light);
+    border: none;
+    cursor: pointer;
+    color: var(--color-text-light);
+    transition: background 0.2s;
+
+    &:hover {
+      background: var(--color-border);
+      color: var(--color-text);
+    }
+  }
+
+  // 遮罩层
+  .nav__overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    z-index: 115;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s var(--ease-smooth);
+
+    &.is-open {
+      opacity: 1;
+      pointer-events: auto;
+    }
   }
 }

@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
-  <rect width="400" height="300" fill="#c8a860"/>
-  <g opacity="0.5">
-    <path d="M20,240 L100,120 L140,125 L50,245 Z" fill="#a88040" stroke="#8a6830" stroke-width="1.5"/>
-    <path d="M140,240 L220,100 L260,105 L170,245 Z" fill="#b89050" stroke="#8a6830" stroke-width="1.5"/>
-    <path d="M260,240 L340,130 L380,135 L290,245 Z" fill="#a88040" stroke="#8a6830" stroke-width="1.5"/>
-  </g>
-  <text x="200" y="278" text-anchor="middle" fill="#4a3020" font-size="14" font-family="sans-serif" font-weight="bold">雅丹地貌 | Yardang</text>
-</svg>

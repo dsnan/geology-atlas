@@ -2,10 +2,10 @@
 title: "流纹岩"
 title_en: "Rhyolite"
 date: 2026-06-04
-thumbnail: "/assets/images/igneous/rhyolite.svg"
+thumbnail: "/assets/images/igneous/rhyolite.jpg"
 images:
-  - url: "/assets/images/igneous/rhyolite.svg"
-    caption: "流纹岩标本"
+  - url: "/assets/images/igneous/rhyolite.jpg"
+    caption: "流纹岩标本——可见流纹构造"
 properties:
   - label: "成因类型"
     value: "火成岩（喷出岩）"

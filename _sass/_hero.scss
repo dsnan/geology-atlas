@@ -113,6 +113,7 @@
     border: 2px solid var(--color-border);
     box-shadow: var(--shadow-md);
     transition: all 0.25s var(--ease-smooth);
+    min-width: 0;
 
     &::placeholder {
       color: #a0aec0;
@@ -134,6 +135,7 @@
   position: relative;
   width: 100%;
   max-width: 520px;
+  margin: 0 auto;
 
   &::before {
     content: "🔍";
@@ -249,6 +251,14 @@
       right: 0;
       height: 4px;
       border-radius: 0;
+    }
+  }
+
+  // 触摸设备：减小 hover 抬起幅度
+  @media (hover: none) and (pointer: coarse) {
+    &:active {
+      transform: scale(0.97);
+      transition: transform 0.1s;
     }
   }
 }

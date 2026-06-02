@@ -2,9 +2,9 @@
 title: "萤石"
 title_en: "Fluorite"
 date: 2026-06-01
-thumbnail: "/assets/images/minerals/fluorite.svg"
+thumbnail: "/assets/images/minerals/fluorite.jpg"
 images:
-  - url: "/assets/images/minerals/fluorite.svg"
+  - url: "/assets/images/minerals/fluorite.jpg"
     caption: "萤石晶体标本"
 properties:
   - label: "化学成分"

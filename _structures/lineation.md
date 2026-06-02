@@ -2,10 +2,10 @@
 title: "线理"
 title_en: "Lineation"
 date: 2026-06-13
-thumbnail: "/assets/images/structures/lineation.svg"
+thumbnail: "/assets/images/structures/lineation.jpg"
 images:
-  - url: "/assets/images/structures/lineation.svg"
-    caption: "变质岩中的线理构造"
+  - url: "/assets/images/structures/lineation.jpg"
+    caption: "变质岩中的拉伸线理 — 矿物定向排列指示运动方向"
 properties:
   - label: "构造类型"
     value: "透入性线状构造"

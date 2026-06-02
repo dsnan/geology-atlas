@@ -2,10 +2,10 @@
 title: "页岩"
 title_en: "Shale"
 date: 2026-05-18
-thumbnail: "/assets/images/sedimentary/shale.svg"
+thumbnail: "/assets/images/sedimentary/shale.jpg"
 images:
-  - url: "/assets/images/sedimentary/shale.svg"
-    caption: "页岩标本"
+  - url: "/assets/images/sedimentary/shale.jpg"
+    caption: "页岩标本 — 页理发育，沿层理裂成薄片"
 properties:
   - label: "成因类型"
     value: "沉积岩（泥质岩）"

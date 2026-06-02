@@ -33,6 +33,14 @@
   &.is-hidden {
     display: none;
   }
+
+  // 触摸设备：减小 hover 抬起距离
+  @media (hover: none) and (pointer: coarse) {
+    &:active {
+      transform: scale(0.97);
+      transition: transform 0.1s;
+    }
+  }
 }
 
 .card__link {

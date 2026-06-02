@@ -2,10 +2,10 @@
 title: "砾岩"
 title_en: "Conglomerate"
 date: 2026-06-06
-thumbnail: "/assets/images/sedimentary/conglomerate.svg"
+thumbnail: "/assets/images/sedimentary/conglomerate.jpg"
 images:
-  - url: "/assets/images/sedimentary/conglomerate.svg"
-    caption: "砾岩标本"
+  - url: "/assets/images/sedimentary/conglomerate.jpg"
+    caption: "砾岩标本——砾石镶嵌于基质中"
 properties:
   - label: "成因类型"
     value: "沉积岩（粗碎屑岩）"

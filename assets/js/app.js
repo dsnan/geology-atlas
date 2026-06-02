@@ -72,4 +72,118 @@
       }
     });
   });
+
+  // ---- 移动端导航菜单 ----
+  const navToggle = document.getElementById('nav-toggle');
+  const navMenu = document.getElementById('nav-menu');
+  const navOverlay = document.getElementById('nav-overlay');
+  const navClose = document.getElementById('nav-menu-close');
+  const body = document.body;
+
+  function openMenu() {
+    navToggle.classList.add('is-open');
+    navToggle.setAttribute('aria-expanded', 'true');
+    navMenu.classList.add('is-open');
+    navOverlay.classList.add('is-open');
+    body.style.overflow = 'hidden';
+  }
+
+  function closeMenu() {
+    navToggle.classList.remove('is-open');
+    navToggle.setAttribute('aria-expanded', 'false');
+    navMenu.classList.remove('is-open');
+    navOverlay.classList.remove('is-open');
+    body.style.overflow = '';
+  }
+
+  if (navToggle && navMenu && navOverlay && navClose) {
+    navToggle.addEventListener('click', function () {
+      if (navMenu.classList.contains('is-open')) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    });
+
+    navClose.addEventListener('click', closeMenu);
+    navOverlay.addEventListener('click', closeMenu);
+
+    // 点击菜单内链接后自动关闭
+    navMenu.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        closeMenu();
+      });
+    });
+
+    // ESC 关闭菜单
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') {
+        // 优先关闭公告弹窗
+        var announcementOverlay = document.getElementById('announcement-overlay');
+        if (announcementOverlay && announcementOverlay.classList.contains('is-open')) {
+          closeAnnouncement();
+          return;
+        }
+        // 其次关闭移动端菜单
+        if (navMenu.classList.contains('is-open')) {
+          closeMenu();
+          navToggle.focus();
+        }
+      }
+    });
+  }
+
+  // ---- 公告弹窗 ----
+  var announcementOverlay = document.getElementById('announcement-overlay');
+  var announcementClose = document.getElementById('announcement-close');
+  var announcementModal = document.getElementById('announcement-modal');
+
+  function openAnnouncement() {
+    if (!announcementOverlay) return;
+    announcementOverlay.classList.add('is-open');
+    body.style.overflow = 'hidden';
+    if (announcementClose) {
+      announcementClose.focus();
+    }
+  }
+
+  function closeAnnouncement() {
+    if (!announcementOverlay) return;
+    announcementOverlay.classList.remove('is-open');
+    body.style.overflow = '';
+    // 记住已关闭，下次不再显示
+    try {
+      localStorage.setItem('geology-atlas-announcement-dismissed', '1');
+    } catch (e) { /* localStorage 不可用则忽略 */ }
+  }
+
+  if (announcementOverlay) {
+    // 检查是否已关闭过，仅首次访问显示
+    var dismissed = false;
+    try {
+      dismissed = localStorage.getItem('geology-atlas-announcement-dismissed') === '1';
+    } catch (e) { /* localStorage 不可用则每次显示 */ }
+
+    if (!dismissed) {
+      if (document.readyState === 'complete') {
+        setTimeout(openAnnouncement, 400);
+      } else {
+        window.addEventListener('load', function () {
+          setTimeout(openAnnouncement, 400);
+        });
+      }
+    }
+
+    // 关闭按钮
+    if (announcementClose) {
+      announcementClose.addEventListener('click', closeAnnouncement);
+    }
+
+    // 点击遮罩关闭
+    announcementOverlay.addEventListener('click', function (e) {
+      if (e.target === announcementOverlay) {
+        closeAnnouncement();
+      }
+    });
+  }
 })();

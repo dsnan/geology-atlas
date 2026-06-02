@@ -2,10 +2,10 @@
 title: "砂岩"
 title_en: "Sandstone"
 date: 2026-05-16
-thumbnail: "/assets/images/sedimentary/sandstone.svg"
+thumbnail: "/assets/images/sedimentary/sandstone.jpg"
 images:
-  - url: "/assets/images/sedimentary/sandstone.svg"
-    caption: "砂岩标本"
+  - url: "/assets/images/sedimentary/sandstone.jpg"
+    caption: "砂岩标本 — 砂粒结构清晰可见"
 properties:
   - label: "成因类型"
     value: "沉积岩（碎屑岩）"

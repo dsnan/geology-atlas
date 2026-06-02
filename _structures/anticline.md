@@ -5,7 +5,7 @@ date: 2026-05-08
 thumbnail: "/assets/images/structures/anticline.jpg"
 images:
   - url: "/assets/images/structures/anticline.jpg"
-    caption: "背斜构造示意图 — 岩层向上弯曲"
+    caption: "背斜构造 — 岩层向上弯曲"
 properties:
   - label: "构造类型"
     value: "褶皱构造"

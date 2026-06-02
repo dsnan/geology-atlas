@@ -2,9 +2,9 @@
 title: "高岭石"
 title_en: "Kaolinite"
 date: 2026-05-31
-thumbnail: "/assets/images/minerals/kaolinite.svg"
+thumbnail: "/assets/images/minerals/kaolinite.jpg"
 images:
-  - url: "/assets/images/minerals/kaolinite.svg"
+  - url: "/assets/images/minerals/kaolinite.jpg"
     caption: "高岭石矿物标本"
 properties:
   - label: "化学成分"

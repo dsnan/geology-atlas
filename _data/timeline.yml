@@ -1,0 +1,241 @@
+# ============================================
+# 地质年代时间轴数据
+# ============================================
+
+- id: hadean
+  name: 冥古宙
+  name_en: Hadean
+  start: 4600
+  end: 4000
+  unit: 百万年前
+  color: "#8B0000"
+  color_bg: "#fdf2f2"
+  icon: "🔥"
+  summary: 地球形成初期，地壳冷却凝固，原始大气和海洋开始形成，无生命痕迹。
+  events:
+    - "地球形成，原始地壳开始冷却"
+    - "原始大气（甲烷、氨、水蒸气）和原始海洋形成"
+    - "月球形成（大碰撞假说）"
+    - "最古老的锆石矿物结晶（~44亿年）"
+  fossils: []
+  rocks:
+    - "最古老锆石"
+    - "原始地壳岩石"
+
+- id: archean
+  name: 太古宙
+  name_en: Archean
+  start: 4000
+  end: 2500
+  unit: 百万年前
+  color: "#B8860B"
+  color_bg: "#fef9e7"
+  icon: "🦠"
+  summary: 最早的生命——原核生物（细菌和古菌）出现，开始进行光合作用，逐渐改变大气成分。
+  events:
+    - "最早的生命出现：原核生物（细菌和古菌）"
+    - "蓝藻开始进行光合作用产氧"
+    - "条带状铁建造（BIF）大量沉积"
+    - "大陆核（克拉通）开始形成"
+  fossils:
+    - "叠层石"
+    - "微体化石（原核生物）"
+  rocks:
+    - "条带状铁建造"
+    - "花岗岩-绿岩带"
+
+- id: proterozoic
+  name: 元古宙
+  name_en: Proterozoic
+  start: 2500
+  end: 541
+  unit: 百万年前
+  color: "#2E7D32"
+  color_bg: "#e8f5e9"
+  icon: "🧬"
+  summary: 真核生物出现，大气氧含量大幅上升（大氧化事件），多细胞生物兴起，末期出现埃迪卡拉动物群。
+  events:
+    - "大氧化事件：大气氧气含量急剧升高"
+    - "真核生物出现"
+    - "最早的超级大陆——罗迪尼亚大陆形成与裂解"
+    - "雪球地球事件（成冰纪）"
+    - "埃迪卡拉动物群：最早的多细胞复杂生物"
+    - "臭氧层形成，为陆地生命提供保护"
+  fossils:
+    - "埃迪卡拉动物群"
+    - "疑源类"
+    - "大型藻类"
+  rocks:
+    - "冰碛岩（成冰纪）"
+    - "碳酸盐岩台地沉积"
+
+# ============================================
+# 显生宙 — 含细分 11 个纪
+# ============================================
+- id: phanerozoic
+  name: 显生宙
+  name_en: Phanerozoic
+  start: 541
+  end: 0
+  unit: 百万年前
+  color: "#1565C0"
+  color_bg: "#e3f2fd"
+  icon: "🌍"
+  summary: "生物大爆发与大规模演化：从寒武纪生命大爆发至今，经历了五次生物大灭绝和哺乳动物、人类的崛起。"
+  is_major: true
+  periods:
+    - id: cambrian
+      name: 寒武纪
+      name_en: Cambrian
+      start: 541
+      end: 485
+      color: "#7CB342"
+      color_bg: "#f1f8e9"
+      icon: "🦐"
+      summary: "寒武纪生命大爆发：绝大多数动物门类在相对较短的地质时期内集中出现，三叶虫繁盛。"
+      fossils: ["三叶虫", "奇虾", "马尔虫", "怪诞虫", "欧巴宾海蝎"]
+      rocks: ["布尔吉斯页岩", "澄江生物群地层"]
+      events: ["寒武纪生命大爆发", "硬壳生物大量出现", "布尔吉斯页岩生物群"]
+
+    - id: ordovician
+      name: 奥陶纪
+      name_en: Ordovician
+      start: 485
+      end: 444
+      color: "#009688"
+      color_bg: "#e0f2f1"
+      icon: "🦑"
+      summary: "头足类和笔石繁盛，珊瑚礁开始大量出现，末期发生奥陶纪-志留纪灭绝事件（第一次生物大灭绝）。"
+      fossils: ["直角石", "笔石", "三叶虫", "海百合", "珊瑚"]
+      rocks: ["奥陶系灰岩", "笔石页岩"]
+      events: ["头足类大繁盛", "珊瑚礁广泛分布", "奥陶纪末大灭绝（~85%物种灭绝）"]
+
+    - id: silurian
+      name: 志留纪
+      name_en: Silurian
+      start: 444
+      end: 419
+      color: "#66BB6A"
+      color_bg: "#e8f5e9"
+      icon: "🐟"
+      summary: "有颌鱼类出现，陆生植物（裸蕨）开始登陆，珊瑚礁生态系统恢复繁荣。"
+      fossils: ["有颌鱼类", "板足鲎", "笔石", "床板珊瑚"]
+      rocks: ["志留系砂岩", "生物礁灰岩"]
+      events: ["有颌脊椎动物出现", "维管植物登陆", "海平面上升形成陆表海"]
+
+    - id: devonian
+      name: 泥盆纪
+      name_en: Devonian
+      start: 419
+      end: 359
+      color: "#8D6E63"
+      color_bg: "#efebe9"
+      icon: "🌿"
+      summary: "\"鱼类时代\"：鱼类高度多样化，肉鳍鱼类出现；森林大面积扩张，末期发生泥盆纪末大灭绝。"
+      fossils: ["盾皮鱼", "邓氏鱼", "总鳍鱼", "古石松", "古蕨"]
+      rocks: ["泥盆系砂岩", "老红砂岩"]
+      events: ["鱼类大辐射（鱼类时代）", "最早的森林形成", "两栖动物起源", "泥盆纪末大灭绝"]
+
+    - id: carboniferous
+      name: 石炭纪
+      name_en: Carboniferous
+      start: 359
+      end: 299
+      color: "#5D4037"
+      color_bg: "#efebe9"
+      icon: "🌳"
+      summary: "大规模森林形成（后世煤炭来源），昆虫巨型化，羊膜动物（爬行动物祖先）出现。"
+      fossils: ["巨脉蜻蜓", "巨型千足虫", "鳞木", "封印木", "林蜥"]
+      rocks: ["石炭系煤层", "海相灰岩"]
+      events: ["全球性成煤森林", "昆虫巨型化", "羊膜动物出现", "大气氧含量达历史峰值~35%"]
+
+    - id: permian
+      name: 二叠纪
+      name_en: Permian
+      start: 299
+      end: 252
+      color: "#C62828"
+      color_bg: "#ffebee"
+      icon: "🦎"
+      summary: "爬行动物多样化，盘古超大陆形成，末期发生地球历史上最大的灭绝事件（二叠纪-三叠纪灭绝事件）。"
+      fossils: ["异齿龙", "二齿兽", "菊石", "蜓类"]
+      rocks: ["二叠系蒸发岩", "峨眉山玄武岩"]
+      events: ["盘古超大陆形成", "爬行动物大辐射", "西伯利亚暗色岩喷发", "二叠纪末大灭绝（~96%物种灭绝）"]
+
+    - id: triassic
+      name: 三叠纪
+      name_en: Triassic
+      start: 252
+      end: 201
+      color: "#FF7043"
+      color_bg: "#fbe9e7"
+      icon: "🦕"
+      summary: "大灭绝后生态恢复，最早的恐龙和哺乳动物出现，末期发生三叠纪-侏罗纪灭绝事件。"
+      fossils: ["腔骨龙", "板龙", "鱼龙", "早期哺乳动物"]
+      rocks: ["三叠系红色砂岩", "海相碳酸盐岩"]
+      events: ["恐龙首次出现", "哺乳动物起源", "泛大陆开始裂解", "三叠纪末大灭绝"]
+
+    - id: jurassic
+      name: 侏罗纪
+      name_en: Jurassic
+      start: 201
+      end: 145
+      color: "#FFA726"
+      color_bg: "#fff3e0"
+      icon: "🦖"
+      summary: "恐龙统治陆地，最早的鸟类出现（始祖鸟），海洋中鱼龙和蛇颈龙繁盛。"
+      fossils: ["始祖鸟", "梁龙", "剑龙", "菊石", "蛇颈龙"]
+      rocks: ["侏罗系灰岩", "索伦霍芬灰岩"]
+      events: ["鸟类起源", "巨大蜥脚类恐龙繁盛", "泛大陆持续裂解", "大西洋开始张开"]
+
+    - id: cretaceous
+      name: 白垩纪
+      name_en: Cretaceous
+      start: 145
+      end: 66
+      color: "#AB47BC"
+      color_bg: "#f3e5f5"
+      icon: "🌋"
+      summary: "恐龙时代的最后篇章，开花植物大繁盛，末期小行星撞击导致恐龙灭绝（第五次大灭绝）。"
+      fossils: ["霸王龙", "三角龙", "菊石", "沧龙", "被子植物"]
+      rocks: ["白垩系白垩层", "德干暗色岩"]
+      events: ["被子植物大繁盛", "K-Pg 小行星撞击", "非鸟恐龙灭绝", "菊石类灭绝"]
+
+    - id: paleogene
+      name: 古近纪
+      name_en: Paleogene
+      start: 66
+      end: 23
+      color: "#26A69A"
+      color_bg: "#e0f2f1"
+      icon: "🐘"
+      summary: "哺乳动物大辐射，现代鸟类兴起，被子植物统治陆地，印度板块碰撞亚洲形成青藏高原。"
+      fossils: ["始祖马", "始祖象", "恐鹤", "货币虫"]
+      rocks: ["古近系地层", "青藏高原隆升相关沉积"]
+      events: ["哺乳动物大辐射", "印度-亚洲碰撞", "早期灵长类出现", "草的出现与扩张"]
+
+    - id: neogene
+      name: 新近纪
+      name_en: Neogene
+      start: 23
+      end: 2.58
+      color: "#FFCA28"
+      color_bg: "#fff8e1"
+      icon: "🐒"
+      summary: "现代生态系统形成，草原大面积扩张，人类祖先（南方古猿）出现，巴拿马地峡形成。"
+      fossils: ["南方古猿", "剑齿虎", "猛犸象", "巨齿鲨"]
+      rocks: ["新近系地层", "地中海蒸发岩（墨西拿事件）"]
+      events: ["人类祖先出现", "草原大面积扩张", "巴拿马地峡闭合", "地中海干涸（墨西拿盐度危机）"]
+
+    - id: quaternary
+      name: 第四纪
+      name_en: Quaternary
+      start: 2.58
+      end: 0
+      color: "#42A5F5"
+      color_bg: "#e3f2fd"
+      icon: "🧑"
+      summary: "冰河时代：周期性冰期-间冰期旋回，智人演化并扩散至全球，最后一次大冰期结束，人类文明兴起。"
+      fossils: ["智人", "尼安德特人", "猛犸象", "披毛犀"]
+      rocks: ["黄土", "冰碛物", "第四系沉积"]
+      events: ["人族演化与智人出现", "多次冰期-间冰期旋回", "大型哺乳动物灭绝", "人类文明诞生"]

@@ -2,10 +2,12 @@
 title: "不整合面"
 title_en: "Unconformity"
 date: 2026-05-24
-thumbnail: "/assets/images/structures/unconformity.svg"
+thumbnail: "/assets/images/structures/unconformity.jpg"
 images:
-  - url: "/assets/images/structures/unconformity.svg"
-    caption: "不整合面示意图 — 沉积记录中的时间间断"
+  - url: "/assets/images/structures/unconformity.jpg"
+    caption: "不整合面野外露头 — 上下地层呈角度接触"
+  - url: "/assets/images/structures/unconformity-2.jpg"
+    caption: "不整合面近景 — 侵蚀面清晰可见"
 properties:
   - label: "构造类型"
     value: "沉积间断界面"

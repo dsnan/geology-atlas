@@ -2,10 +2,12 @@
 title: "方解石"
 title_en: "Calcite"
 date: 2026-05-11
-thumbnail: "/assets/images/minerals/calcite.svg"
+thumbnail: "/assets/images/minerals/calcite.webp"
 images:
-  - url: "/assets/images/minerals/calcite.svg"
+  - url: "/assets/images/minerals/calcite.webp"
     caption: "方解石晶体标本"
+  - url: "/assets/images/minerals/calcite-2.jpg"
+    caption: "方解石晶体（野外产出）"
 properties:
   - label: "化学成分"
     value: "CaCO₃"

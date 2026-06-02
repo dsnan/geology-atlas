@@ -2,10 +2,10 @@
 title: "大理岩"
 title_en: "Marble"
 date: 2026-05-15
-thumbnail: "/assets/images/metamorphic/marble.svg"
+thumbnail: "/assets/images/metamorphic/marble.jpg"
 images:
-  - url: "/assets/images/metamorphic/marble.svg"
-    caption: "大理岩标本"
+  - url: "/assets/images/metamorphic/marble.jpg"
+    caption: "大理岩标本 — 糖粒状变晶结构，纯白色"
 properties:
   - label: "成因类型"
     value: "变质岩（接触变质/区域变质）"

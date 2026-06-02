@@ -2,9 +2,9 @@
 title: "辉石"
 title_en: "Pyroxene"
 date: 2026-05-29
-thumbnail: "/assets/images/minerals/pyroxene.svg"
+thumbnail: "/assets/images/minerals/pyroxene.jpg"
 images:
-  - url: "/assets/images/minerals/pyroxene.svg"
+  - url: "/assets/images/minerals/pyroxene.jpg"
     caption: "辉石矿物标本"
 properties:
   - label: "化学成分"

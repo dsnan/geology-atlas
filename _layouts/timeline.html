@@ -1,0 +1,131 @@
+---
+---
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if page.title %}{{ page.title }} — {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{% if page.summary %}{{ page.summary }}{% else %}{{ site.description }}{% endif %}">
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  {% seo %}
+</head>
+<body>
+  {% include nav.html %}
+  <main>
+    <div class="timeline-page">
+      <!-- Hero -->
+      <section class="timeline-hero">
+        <div class="container">
+          <h1 class="timeline-hero__title">🕐 地质年代时间轴</h1>
+          <p class="timeline-hero__subtitle">从地球诞生到人类文明，跨越 46 亿年的宏大叙事</p>
+          <!-- 快速跳转 -->
+          <div class="timeline-jump">
+            <span class="timeline-jump__label">快速跳转:</span>
+            {% for eon in site.data.timeline %}
+              <a href="#{{ eon.id }}" class="timeline-jump__btn" style="--jump-color: {{ eon.color }}">
+                {{ eon.icon }} {{ eon.name }}
+              </a>
+            {% endfor %}
+          </div>
+        </div>
+      </section>
+
+      <!-- 时间轴主体 -->
+      <section class="timeline-section">
+        <div class="container">
+          <div class="timeline">
+
+            {% for eon in site.data.timeline %}
+            <!-- ========== 宙级节点 ========== -->
+            <div class="timeline-eon" id="{{ eon.id }}">
+              <div class="timeline-eon__label">
+                <span class="timeline-eon__time">{{ eon.start }}{% if eon.end > 0 %} – {{ eon.end }}{% else %} – 今{% endif %} {{ eon.unit }}</span>
+              </div>
+              <div class="timeline-eon__card" style="--eon-color: {{ eon.color }}; --eon-bg: {{ eon.color_bg }}">
+                <div class="timeline-eon__header">
+                  <span class="timeline-eon__icon">{{ eon.icon }}</span>
+                  <div>
+                    <h2 class="timeline-eon__title">{{ eon.name }} <small>{{ eon.name_en }}</small></h2>
+                  </div>
+                  <span class="timeline-eon__badge" style="background: {{ eon.color }}">{{ eon.start }}{% if eon.end > 0 %}–{{ eon.end }}{% else %}–今{% endif %} Ma</span>
+                </div>
+                <p class="timeline-eon__summary">{{ eon.summary }}</p>
+                <ul class="timeline-eon__events">
+                  {% for event in eon.events %}
+                    <li>{{ event }}</li>
+                  {% endfor %}
+                </ul>
+                {% if eon.fossils.size > 0 or eon.rocks.size > 0 %}
+                <div class="timeline-eon__tags">
+                  {% if eon.fossils.size > 0 %}
+                  <span class="timeline-eon__tag-label">🦴 代表化石:</span>
+                  {% for f in eon.fossils %}<span class="timeline-eon__tag">{{ f }}</span>{% endfor %}
+                  {% endif %}
+                  {% if eon.rocks.size > 0 %}
+                  <span class="timeline-eon__tag-label">🪨 代表岩石:</span>
+                  {% for r in eon.rocks %}<span class="timeline-eon__tag">{{ r }}</span>{% endfor %}
+                  {% endif %}
+                </div>
+                {% endif %}
+              </div>
+            </div>
+
+            <!-- ========== 纪级子节点 (仅显生宙) ========== -->
+            {% if eon.periods %}
+            <div class="timeline-periods">
+              {% for period in eon.periods %}
+              <div class="timeline-period" id="{{ period.id }}">
+                <div class="timeline-period__dot" style="--period-color: {{ period.color }}"></div>
+                <div class="timeline-period__label">
+                  <span class="timeline-period__time">{{ period.start }} – {{ period.end }}{% if period.end == 0 %} 今{% endif %} Ma</span>
+                </div>
+                <div class="timeline-period__card" style="--period-color: {{ period.color }}; --period-bg: {{ period.color_bg }}">
+                  <div class="timeline-period__header">
+                    <span class="timeline-period__icon">{{ period.icon }}</span>
+                    <div>
+                      <h3 class="timeline-period__title">{{ period.name }} <small>{{ period.name_en }}</small></h3>
+                    </div>
+                    <span class="timeline-period__badge" style="background: {{ period.color }}">{{ period.start }}{% if period.end > 0 %}–{{ period.end }}{% else %}–今{% endif %} Ma</span>
+                  </div>
+                  <p class="timeline-period__summary">{{ period.summary }}</p>
+                  <ul class="timeline-period__events">
+                    {% for event in period.events %}
+                      <li>{{ event }}</li>
+                    {% endfor %}
+                  </ul>
+                  {% if period.fossils.size > 0 %}
+                  <div class="timeline-period__tags">
+                    <span class="timeline-period__tag-label">🦴 代表化石:</span>
+                    {% for f in period.fossils %}<span class="timeline-period__tag">{{ f }}</span>{% endfor %}
+                  </div>
+                  {% endif %}
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+            {% endif %}
+            {% endfor %}
+
+          </div>
+        </div>
+      </section>
+
+      <!-- 底部说明 -->
+      <section class="timeline-footer-note">
+        <div class="container">
+          <p>📖 Ma = 百万年（Mega-annum）。地质年代划分依据国际地层委员会（ICS）2024 年标准。</p>
+          <p>💡 点击上方导航栏的分类可浏览每个时代的代表矿物、岩石和化石。</p>
+        </div>
+      </section>
+    </div>
+  </main>
+  {% include footer.html %}
+  {% include announcement.html %}
+  <button class="scroll-top" id="scroll-top" title="返回顶部" aria-label="返回顶部">↑</button>
+  <script src="{{ '/assets/js/filter.js' | relative_url }}"></script>
+  <script src="{{ '/assets/js/search.js' | relative_url }}"></script>
+  <script src="{{ '/assets/js/gallery.js' | relative_url }}"></script>
+  <script src="{{ '/assets/js/app.js' | relative_url }}"></script>
+</body>
+</html>

@@ -2,9 +2,9 @@
 title: "角闪石"
 title_en: "Amphibole"
 date: 2026-05-30
-thumbnail: "/assets/images/minerals/amphibole.svg"
+thumbnail: "/assets/images/minerals/amphibole.jpg"
 images:
-  - url: "/assets/images/minerals/amphibole.svg"
+  - url: "/assets/images/minerals/amphibole.jpg"
     caption: "角闪石矿物标本"
 properties:
   - label: "化学成分"

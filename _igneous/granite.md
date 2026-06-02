@@ -6,6 +6,8 @@ thumbnail: "/assets/images/igneous/granite.jpg"
 images:
   - url: "/assets/images/igneous/granite.jpg"
     caption: "花岗岩手标本"
+  - url: "/assets/images/igneous/granite-2.jpg"
+    caption: "花岗岩野外露头"
 properties:
   - label: "成因类型"
     value: "火成岩（深成侵入岩）"

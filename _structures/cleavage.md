@@ -2,10 +2,12 @@
 title: "劈理"
 title_en: "Cleavage"
 date: 2026-06-12
-thumbnail: "/assets/images/structures/cleavage.svg"
+thumbnail: "/assets/images/structures/cleavage.jpg"
 images:
-  - url: "/assets/images/structures/cleavage.svg"
-    caption: "岩石中的劈理构造"
+  - url: "/assets/images/structures/cleavage.jpg"
+    caption: "板岩中的劈理构造 — 密集平行破裂面"
+  - url: "/assets/images/structures/cleavage-2.jpg"
+    caption: "劈理野外露头 — 岩石沿劈理面裂成薄片"
 properties:
   - label: "构造类型"
     value: "透入性面状构造"

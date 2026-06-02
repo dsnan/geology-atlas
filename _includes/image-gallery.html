@@ -1,19 +1,29 @@
-<div class="image-gallery">
+<div class="image-gallery" data-gallery>
   <div class="image-gallery__main">
+    {% if include.images.size > 1 %}
+    <button class="image-gallery__arrow image-gallery__arrow--prev" data-gallery-prev aria-label="上一张">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    <button class="image-gallery__arrow image-gallery__arrow--next" data-gallery-next aria-label="下一张">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+    {% endif %}
     <img src="{{ include.images[0].url | relative_url }}"
          alt="{{ include.images[0].caption | escape }}"
-         id="gallery-main" />
+         id="gallery-main"
+         data-gallery-main />
+    <span class="image-gallery__counter" data-gallery-counter>1 / {{ include.images.size }}</span>
   </div>
   {% if include.images.size > 1 %}
-    <div class="image-gallery__thumbnails">
+    <div class="image-gallery__thumbnails" data-gallery-thumbs>
       {% for img in include.images %}
         <button class="image-gallery__thumb {% if forloop.first %}active{% endif %}"
-                onclick="switchGalleryImage('{{ img.url | relative_url }}', '{{ img.caption | escape }}', this)"
+                data-gallery-index="{{ forloop.index0 }}"
                 aria-label="切换到图{{ forloop.index }}">
           <img src="{{ img.url | relative_url }}" alt="{{ img.caption | escape }}" loading="lazy" />
         </button>
       {% endfor %}
     </div>
   {% endif %}
-  <p class="image-gallery__caption" id="gallery-caption">{{ include.images[0].caption }}</p>
+  <p class="image-gallery__caption" id="gallery-caption" data-gallery-caption>{{ include.images[0].caption }}</p>
 </div>

@@ -3,10 +3,10 @@ title: "鲍温反应序列"
 title_en: "Bowen's Reaction Series"
 date: 2026-06-18
 category_name: "扩充"
-thumbnail: "/assets/images/igneous/bowen.svg"
+thumbnail: "/assets/images/igneous/bowen.jpg"
 images:
-  - url: "/assets/images/igneous/bowen.svg"
-    caption: "鲍温反应序列示意图"
+  - url: "/assets/images/igneous/bowen.jpg"
+    caption: "鲍温反应序列示意图——矿物结晶顺序"
 properties:
   - label: "提出者"
     value: "Norman L. Bowen（加拿大岩石学家）"

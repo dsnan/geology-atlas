@@ -2,10 +2,14 @@
 title: "片麻岩"
 title_en: "Gneiss"
 date: 2026-05-17
-thumbnail: "/assets/images/metamorphic/gneiss.svg"
+thumbnail: "/assets/images/metamorphic/gneiss.jpg"
 images:
-  - url: "/assets/images/metamorphic/gneiss.svg"
-    caption: "片麻岩手标本"
+  - url: "/assets/images/metamorphic/gneiss.jpg"
+    caption: "片麻岩手标本 — 深浅色条带相间"
+  - url: "/assets/images/metamorphic/gneiss-2.jpg"
+    caption: "片麻岩野外露头 — 片麻状构造"
+  - url: "/assets/images/metamorphic/gneiss-3.jpg"
+    caption: "片麻岩近景 — 矿物分异条带清晰可见"
 properties:
   - label: "成因类型"
     value: "变质岩（区域变质，高级）"

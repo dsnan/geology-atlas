@@ -1,0 +1,561 @@
+// ============================================
+// 地质年代时间轴
+// ============================================
+
+// ---- Hero ----
+.timeline-hero {
+  background: linear-gradient(180deg, #fafaf8 0%, var(--color-bg) 100%);
+  padding: var(--space-2xl) 0 var(--space-xl);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(
+      to right,
+      #8B0000 0%, #8B0000 8%,
+      #B8860B 8%, #B8860B 25%,
+      #2E7D32 25%, #2E7D32 42%,
+      #1565C0 42%, #1565C0 100%
+    );
+  }
+}
+
+.timeline-hero__title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #1a365d;
+  margin-bottom: var(--space-sm);
+  letter-spacing: -0.02em;
+}
+
+.timeline-hero__subtitle {
+  font-size: 1.1rem;
+  color: var(--color-text-light);
+  margin-bottom: var(--space-xl);
+}
+
+// ---- 快速跳转 ----
+.timeline-jump {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+}
+
+.timeline-jump__label {
+  font-size: 0.85rem;
+  color: var(--color-text-light);
+  font-weight: 500;
+  margin-right: var(--space-xs);
+}
+
+.timeline-jump__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  background: var(--color-surface);
+  border: 1.5px solid var(--jump-color, var(--color-border));
+  color: var(--jump-color, var(--color-text));
+  transition: all 0.2s;
+  text-decoration: none;
+
+  &:hover {
+    background: var(--jump-color, var(--color-primary));
+    color: #fff;
+    border-color: var(--jump-color, var(--color-primary));
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+}
+
+// ---- 时间轴主体 ----
+.timeline-section {
+  padding: 0 0 var(--space-3xl);
+}
+
+.timeline {
+  position: relative;
+  padding-left: 60px;
+
+  // 中心线
+  &::before {
+    content: "";
+    position: absolute;
+    left: 23px;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(
+      to bottom,
+      #8B0000 0%, #8B0000 10%,
+      #B8860B 10%, #B8860B 25%,
+      #2E7D32 25%, #2E7D32 42%,
+      #1565C0 42%, #1565C0 100%
+    );
+    border-radius: 2px;
+  }
+}
+
+// ============================================
+// 宙级节点
+// ============================================
+.timeline-eon {
+  position: relative;
+  margin-bottom: var(--space-2xl);
+
+  // 时间轴上的大圆点
+  &::before {
+    content: "";
+    position: absolute;
+    left: -41px;
+    top: 28px;
+    width: 18px;
+    height: 18px;
+    background: var(--eon-color);
+    border: 3px solid var(--color-surface);
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px var(--eon-color, rgba(0,0,0,0.1));
+    z-index: 2;
+  }
+}
+
+.timeline-eon__label {
+  margin-bottom: var(--space-sm);
+}
+
+.timeline-eon__time {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--eon-color);
+  background: var(--eon-bg);
+  padding: 3px 12px;
+  border-radius: 12px;
+}
+
+.timeline-eon__card {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  border: 1px solid var(--color-border-light);
+  border-left: 4px solid var(--eon-color);
+  transition: box-shadow 0.3s, transform 0.3s;
+
+  &:hover {
+    box-shadow: var(--shadow-xl);
+    transform: translateY(-2px);
+  }
+}
+
+.timeline-eon__header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-lg) var(--space-lg) var(--space-sm);
+  flex-wrap: wrap;
+}
+
+.timeline-eon__icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.timeline-eon__title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #1a365d;
+
+  small {
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: var(--color-text-light);
+    font-style: italic;
+    margin-left: var(--space-xs);
+  }
+}
+
+.timeline-eon__badge {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: #fff;
+  padding: 4px 14px;
+  border-radius: 14px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.timeline-eon__summary {
+  padding: 0 var(--space-lg);
+  font-size: 0.95rem;
+  color: var(--color-text);
+  line-height: 1.7;
+  margin-bottom: var(--space-md);
+}
+
+.timeline-eon__events {
+  list-style: none;
+  padding: 0 var(--space-lg);
+  margin-bottom: var(--space-md);
+
+  li {
+    position: relative;
+    padding: 4px 0 4px 20px;
+    font-size: 0.88rem;
+    color: var(--color-text-light);
+    line-height: 1.6;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 12px;
+      width: 6px;
+      height: 6px;
+      background: var(--eon-color);
+      border-radius: 50%;
+      opacity: 0.5;
+    }
+  }
+}
+
+.timeline-eon__tags {
+  padding: 0 var(--space-lg) var(--space-md);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.timeline-eon__tag-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-text-light);
+  margin-right: 2px;
+}
+
+.timeline-eon__tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  padding: 2px 10px;
+  background: var(--eon-bg);
+  color: var(--eon-color);
+  border-radius: 10px;
+  font-weight: 500;
+}
+
+// ============================================
+// 纪级子节点（显生宙）
+// ============================================
+.timeline-periods {
+  position: relative;
+  margin-left: 20px;
+  padding-left: 36px;
+  margin-bottom: var(--space-lg);
+
+  // 分支竖线
+  &::before {
+    content: "";
+    position: absolute;
+    left: -3px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #cbd5e0;
+    border-radius: 1px;
+    opacity: 0.5;
+  }
+}
+
+.timeline-period {
+  position: relative;
+  margin-bottom: var(--space-lg);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.timeline-period__dot {
+  position: absolute;
+  left: -43px;
+  top: 20px;
+  width: 12px;
+  height: 12px;
+  background: var(--period-color);
+  border: 2px solid var(--color-surface);
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px var(--period-color, rgba(0,0,0,0.08));
+  z-index: 2;
+}
+
+.timeline-period__label {
+  margin-bottom: var(--space-xs);
+}
+
+.timeline-period__time {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--period-color);
+  background: var(--period-bg);
+  padding: 2px 10px;
+  border-radius: 10px;
+}
+
+.timeline-period__card {
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  border: 1px solid var(--color-border-light);
+  border-left: 3px solid var(--period-color);
+  transition: box-shadow 0.2s, transform 0.2s;
+
+  &:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateX(4px);
+  }
+}
+
+.timeline-period__header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-md) var(--space-md) var(--space-sm);
+  flex-wrap: wrap;
+}
+
+.timeline-period__icon {
+  font-size: 1.4rem;
+  flex-shrink: 0;
+}
+
+.timeline-period__title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-text);
+
+  small {
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: var(--color-text-light);
+    font-style: italic;
+    margin-left: var(--space-xs);
+  }
+}
+
+.timeline-period__badge {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: #fff;
+  padding: 3px 10px;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+.timeline-period__summary {
+  padding: 0 var(--space-md);
+  font-size: 0.88rem;
+  color: var(--color-text);
+  line-height: 1.65;
+  margin-bottom: var(--space-sm);
+}
+
+.timeline-period__events {
+  list-style: none;
+  padding: 0 var(--space-md);
+  margin-bottom: var(--space-sm);
+
+  li {
+    position: relative;
+    padding: 3px 0 3px 18px;
+    font-size: 0.82rem;
+    color: var(--color-text-light);
+    line-height: 1.55;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 10px;
+      width: 5px;
+      height: 5px;
+      background: var(--period-color);
+      border-radius: 50%;
+      opacity: 0.45;
+    }
+  }
+}
+
+.timeline-period__tags {
+  padding: 0 var(--space-md) var(--space-sm);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.timeline-period__tag-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--color-text-light);
+  margin-right: 2px;
+}
+
+.timeline-period__tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  padding: 2px 8px;
+  background: var(--period-bg);
+  color: var(--period-color);
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+// ---- 底部说明 ----
+.timeline-footer-note {
+  text-align: center;
+  padding: var(--space-xl) 0 var(--space-2xl);
+  color: var(--color-text-light);
+  font-size: 0.85rem;
+
+  p {
+    margin-bottom: var(--space-xs);
+  }
+}
+
+// ============================================
+// 响应式
+// ============================================
+@media (max-width: 768px) {
+  .timeline {
+    padding-left: 44px;
+
+    &::before {
+      left: 15px;
+    }
+  }
+
+  .timeline-eon {
+    &::before {
+      left: -33px;
+      width: 14px;
+      height: 14px;
+    }
+  }
+
+  .timeline-periods {
+    margin-left: 8px;
+    padding-left: 28px;
+  }
+
+  .timeline-period__dot {
+    left: -35px;
+    width: 10px;
+    height: 10px;
+  }
+
+  .timeline-hero__title {
+    font-size: 1.5rem;
+  }
+
+  .timeline-hero__subtitle {
+    font-size: 0.9rem;
+  }
+
+  .timeline-jump__btn {
+    font-size: 0.72rem;
+    padding: 5px 12px;
+  }
+
+  .timeline-eon__header {
+    padding: var(--space-md);
+  }
+
+  .timeline-eon__title {
+    font-size: 1.15rem;
+  }
+
+  .timeline-eon__badge {
+    margin-left: 0;
+  }
+
+  .timeline-period__header {
+    padding: var(--space-md) var(--space-md) var(--space-xs);
+  }
+
+  .timeline-period__title {
+    font-size: 0.95rem;
+  }
+
+  .timeline-period__badge {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .timeline {
+    padding-left: 32px;
+
+    &::before {
+      left: 10px;
+      width: 2px;
+    }
+  }
+
+  .timeline-eon {
+    &::before {
+      left: -26px;
+      top: 22px;
+      width: 12px;
+      height: 12px;
+      box-shadow: 0 0 0 3px var(--eon-color, rgba(0,0,0,0.06));
+    }
+  }
+
+  .timeline-periods {
+    margin-left: 2px;
+    padding-left: 20px;
+  }
+
+  .timeline-period__dot {
+    left: -27px;
+    top: 16px;
+    width: 8px;
+    height: 8px;
+  }
+
+  .timeline-eon__summary {
+    font-size: 0.88rem;
+  }
+
+  .timeline-period__summary {
+    font-size: 0.82rem;
+  }
+
+  .timeline-jump {
+    gap: 6px;
+  }
+
+  .timeline-jump__btn {
+    font-size: 0.68rem;
+    padding: 4px 10px;
+  }
+}

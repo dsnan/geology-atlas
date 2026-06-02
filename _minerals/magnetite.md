@@ -2,10 +2,12 @@
 title: "磁铁矿"
 title_en: "Magnetite"
 date: 2026-06-02
-thumbnail: "/assets/images/minerals/magnetite.svg"
+thumbnail: "/assets/images/minerals/magnetite.jpg"
 images:
-  - url: "/assets/images/minerals/magnetite.svg"
+  - url: "/assets/images/minerals/magnetite.jpg"
     caption: "磁铁矿标本"
+  - url: "/assets/images/minerals/magnetite-2.jpg"
+    caption: "磁铁矿（野外产出）"
 properties:
   - label: "化学成分"
     value: "Fe₃O₄（FeO·Fe₂O₃）"

@@ -2,10 +2,10 @@
 title: "闪长岩"
 title_en: "Diorite"
 date: 2026-06-03
-thumbnail: "/assets/images/igneous/diorite.svg"
+thumbnail: "/assets/images/igneous/diorite.jpg"
 images:
-  - url: "/assets/images/igneous/diorite.svg"
-    caption: "闪长岩手标本"
+  - url: "/assets/images/igneous/diorite.jpg"
+    caption: "闪长岩手标本——椒盐状黑白色矿物"
 properties:
   - label: "成因类型"
     value: "火成岩（深成侵入岩）"

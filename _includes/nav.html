@@ -4,11 +4,25 @@
       <span class="nav__brand-icon">🌍</span>
       {{ site.title }}
     </a>
-    <div class="nav__links">
-      {% for cat in site.data.categories %}
-        <a href="{{ '/category/' | append: cat.slug | relative_url }}/">{{ cat.name }}</a>
-      {% endfor %}
-      <a href="{{ '/pages/search/' | relative_url }}" class="nav__search-btn">🔍 搜索</a>
+    <button class="nav__toggle" id="nav-toggle" aria-label="菜单" aria-expanded="false">
+      <span class="nav__toggle-bar"></span>
+      <span class="nav__toggle-bar"></span>
+      <span class="nav__toggle-bar"></span>
+    </button>
+    <div class="nav__menu" id="nav-menu">
+      <div class="nav__menu-header">
+        <span class="nav__menu-title">导航</span>
+        <button class="nav__menu-close" id="nav-menu-close" aria-label="关闭菜单">✕</button>
+      </div>
+      <ul class="nav__links">
+        <li><a href="{{ '/' | relative_url }}">🏠 首页</a></li>
+        {%- for cat in site.data.categories -%}
+          <li><a href="{{ '/category/' | append: cat.slug | relative_url }}/">{{ cat.icon }} {{ cat.name }}</a></li>
+        {%- endfor -%}
+        <li><a href="{{ '/timeline/' | relative_url }}">🕐 时间轴</a></li>
+        <li class="nav__search-li"><a href="{{ '/pages/search/' | relative_url }}" class="nav__search-btn">🔍 搜索</a></li>
+      </ul>
     </div>
+    <div class="nav__overlay" id="nav-overlay"></div>
   </div>
 </nav>

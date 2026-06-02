@@ -2,10 +2,10 @@
 title: "向斜"
 title_en: "Syncline"
 date: 2026-05-22
-thumbnail: "/assets/images/structures/syncline.svg"
+thumbnail: "/assets/images/structures/syncline.jpg"
 images:
-  - url: "/assets/images/structures/syncline.svg"
-    caption: "向斜构造示意图 — 岩层向下弯曲"
+  - url: "/assets/images/structures/syncline.jpg"
+    caption: "向斜构造 — 岩层向下弯曲"
 properties:
   - label: "构造类型"
     value: "褶皱构造"

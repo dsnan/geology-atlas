@@ -2,10 +2,14 @@
 title: "笔石"
 title_en: "Graptolite"
 date: 2026-05-21
-thumbnail: "/assets/images/fossils/graptolite.svg"
+thumbnail: "/assets/images/fossils/graptolite.jpg"
 images:
-  - url: "/assets/images/fossils/graptolite.svg"
+  - url: "/assets/images/fossils/graptolite.jpg"
     caption: "笔石化石标本（保存在黑色页岩中）"
+  - url: "/assets/images/fossils/graptolite-2.jpg"
+    caption: "笔石化石近景——可见胞管排列细节"
+  - url: "/assets/images/fossils/graptolite-3.jpg"
+    caption: "笔石化石——黑色页岩中的碳质薄膜保存"
 properties:
   - label: "地质年代"
     value: "寒武纪中期至石炭纪早期（约5.1亿-3.2亿年前）"

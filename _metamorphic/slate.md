@@ -2,10 +2,14 @@
 title: "板岩"
 title_en: "Slate"
 date: 2026-06-05
-thumbnail: "/assets/images/metamorphic/slate.svg"
+thumbnail: "/assets/images/metamorphic/slate.jpg"
 images:
-  - url: "/assets/images/metamorphic/slate.svg"
-    caption: "板岩标本"
+  - url: "/assets/images/metamorphic/slate.jpg"
+    caption: "板岩标本 — 板理发育，可劈成薄片"
+  - url: "/assets/images/metamorphic/slate-2.jpg"
+    caption: "板岩板理面特写 — 丝绢光泽"
+  - url: "/assets/images/metamorphic/slate-3.jpg"
+    caption: "板岩野外露头"
 properties:
   - label: "成因类型"
     value: "变质岩（区域变质，低级）"

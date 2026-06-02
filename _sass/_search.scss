@@ -94,6 +94,24 @@
   visibility: visible;
 }
 
+// 移动端 tooltip 出现在下方，避免被截断
+@media (max-width: 640px) {
+  .search-mode__tooltip {
+    top: calc(100% + 10px);
+    bottom: auto;
+    width: 200px;
+    font-size: 0.72rem;
+    padding: 6px 10px;
+
+    &::after {
+      top: auto;
+      bottom: 100%;
+      border-top-color: transparent;
+      border-bottom-color: #1a365d;
+    }
+  }
+}
+
 // ---- 搜索框 ----
 .search-page__input {
   width: 100%;
