@@ -80,12 +80,31 @@
   const navClose = document.getElementById('nav-menu-close');
   const body = document.body;
 
+  // 滚动锁定辅助函数（保持滚动位置，避免移动端跳动）
+  var scrollY = 0;
+
+  function lockScroll() {
+    scrollY = window.scrollY;
+    body.style.position = 'fixed';
+    body.style.top = '-' + scrollY + 'px';
+    body.style.width = '100%';
+    body.style.overflow = 'hidden';
+  }
+
+  function unlockScroll() {
+    body.style.position = '';
+    body.style.top = '';
+    body.style.width = '';
+    body.style.overflow = '';
+    window.scrollTo(0, scrollY);
+  }
+
   function openMenu() {
     navToggle.classList.add('is-open');
     navToggle.setAttribute('aria-expanded', 'true');
     navMenu.classList.add('is-open');
     navOverlay.classList.add('is-open');
-    body.style.overflow = 'hidden';
+    lockScroll();
   }
 
   function closeMenu() {
@@ -93,7 +112,7 @@
     navToggle.setAttribute('aria-expanded', 'false');
     navMenu.classList.remove('is-open');
     navOverlay.classList.remove('is-open');
-    body.style.overflow = '';
+    unlockScroll();
   }
 
   if (navToggle && navMenu && navOverlay && navClose) {
@@ -141,7 +160,7 @@
   function openAnnouncement() {
     if (!announcementOverlay) return;
     announcementOverlay.classList.add('is-open');
-    body.style.overflow = 'hidden';
+    lockScroll();
     if (announcementClose) {
       announcementClose.focus();
     }
@@ -150,7 +169,7 @@
   function closeAnnouncement() {
     if (!announcementOverlay) return;
     announcementOverlay.classList.remove('is-open');
-    body.style.overflow = '';
+    unlockScroll();
     // 记住已关闭，下次不再显示
     try {
       localStorage.setItem('geology-atlas-announcement-dismissed', '1');
