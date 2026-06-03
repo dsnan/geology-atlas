@@ -60,6 +60,18 @@
     });
   }
 
+    // 搜索跳转：JS监听表单提交（第二层保护，兼容移动端虚拟键盘搜索按钮）
+    var heroForm = heroSearch.closest('form');
+    if (heroForm) {
+      heroForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        var q = heroSearch.value.trim();
+        if (q) {
+          window.location.href = '/geology-atlas/pages/search/?q=' + encodeURIComponent(q);
+        }
+      });
+    }
+
   // ---- 平滑滚动所有锚链接 ----
   document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
     anchor.addEventListener('click', function (e) {
