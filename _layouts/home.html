@@ -30,11 +30,11 @@ layout: default
     </div>
     <h1 class="hero__title">{{ site.title }}</h1>
     <p class="hero__subtitle">{{ site.description }}<br>已收录 <strong>{{ total_count }}</strong> 个地质条目，涵盖矿物、岩石、化石、构造与地貌</p>
-    <div class="hero__search">
+    <form class="hero__search" onsubmit="event.preventDefault();var q=document.getElementById('hero-search').value.trim();if(q){window.location.href='{{ '/pages/search/' | relative_url }}?q='+encodeURIComponent(q)}">
       <div class="hero__search-wrapper">
-        <input type="search" id="hero-search" placeholder="搜索你感兴趣的地质知识…" onkeydown="if(event.key==='Enter'){window.location.href='{{ '/pages/search/' | relative_url }}?q='+encodeURIComponent(this.value)}" />
+        <input type="search" id="hero-search" placeholder="搜索你感兴趣的地质知识…" />
       </div>
-    </div>
+    </form>
     <p class="hero__hint">试试搜索「石英」「恐龙」「火山」 按 <kbd>Ctrl</kbd>+<kbd>K</kbd> 快速搜索</p>
     <div class="hero-stats">
       {% for cat in site.data.categories %}
