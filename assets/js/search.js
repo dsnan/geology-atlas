@@ -118,7 +118,7 @@
   // ---- 高亮 ----
   function highlight(text, query) {
     if (!query) return text;
-    var escaped = query.replace(/[.*+?^${}()|[\]\]/g, '\$&');
+    var escaped = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
     return text.replace(new RegExp('(' + escaped + ')', 'gi'),
       '<mark class="search-highlight">$1</mark>');
   }
